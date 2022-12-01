@@ -1,24 +1,28 @@
-# README
+# <ここにアプリ名を入力>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+<ウイスキー(orお酒の評価サイト)評価サイト>
 
-Things you may want to cover:
+### テーマを選んだ理由
+<自分の趣味とのサイト作成におけるマッチ感>
 
-* Ruby version
+### ターゲットユーザ
+<20代からお年寄りまでの年齢>
 
-* System dependencies
+### 主な利用シーン
+<買おうと悩んでいる時の他者の評価の参照>
 
-* Configuration
+## 設計書
+<...>
 
-* Database creation
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材（メモのためこのまま残してます。）
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
