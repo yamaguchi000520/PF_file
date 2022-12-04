@@ -1,0 +1,2 @@
+class SakeComment < ApplicationRecord
+end
