@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
+  devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"
   }
 
@@ -25,8 +25,8 @@ Rails.application.routes.draw do
     resources :sakes, only:[:index,:show,:destroy,:edit,:update,:create] do
       get 'search' => "genres#search"
     end
-    # idは必要ないためresoure
     get '/customers/my_page' => 'customers#show'
+    get '/customers/index' => 'customers#index'
     get '/customers/information/edit' => 'customers#edit'
     patch '/customers/information' => 'customers#update'
     get '/customers/unsubscribe' => 'customers#unsubscribe'
