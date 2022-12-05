@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :customers
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root to: 'public/homes#top'
   get "about" => "public/homes#about"
@@ -26,7 +23,7 @@ Rails.application.routes.draw do
       get 'search' => "genres#search"
     end
     get '/customers/my_page' => 'customers#show'
-    get '/customers/index' => 'customers#index'
+    get '/customers' => 'customers#index'
     get '/customers/information/edit' => 'customers#edit'
     patch '/customers/information' => 'customers#update'
     get '/customers/unsubscribe' => 'customers#unsubscribe'

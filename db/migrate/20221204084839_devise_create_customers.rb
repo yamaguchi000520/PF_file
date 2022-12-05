@@ -33,7 +33,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
 
       t.string :name, null:false
-      t.string :introduction, null:false
+      t.string :introduction
       t.boolean :is_deleted, default:false, null:false
 
       t.timestamps null: false
