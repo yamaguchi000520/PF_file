@@ -58,3 +58,21 @@ Customer.create!(
     }
    ]
 )
+
+Tag.create!(
+  [
+    {
+      name: "蒸留酒"
+    }
+  ]
+)
+
+sake = Sake.create!(
+      genre_id: 2,
+      name: "black label",
+      price: 2100,
+      tag_id: 1,
+      introduction: "値段の割の味わいとしてはとてもお勧めです。",
+      evaluation: 0
+)
+sake.image.attach(io: File.open(Rails.root.join("app/assets/images/no_image.jpg")), filename: "no_image.jpg")
