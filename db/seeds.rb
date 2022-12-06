@@ -49,6 +49,12 @@ Customer.create!(
         introduction: '初めまして、ラーメン好きの人です。',
         email: 'i@i',
         password: 'iiiiii'
+    },
+    {
+        name: 'ウイスキー毎日飲酒',
+        introduction: '常飲酒はホワイトホースくんです。',
+        email: 'a@a',
+        password: 'aaaaaa'
     }
    ]
 )

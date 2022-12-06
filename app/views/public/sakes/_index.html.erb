@@ -1,0 +1,11 @@
+<div>
+<% sakes.each do |sake| %>
+  <p><strong><%= sake.customer.name %></strong>さん</p>
+  <%= link_to sake_path(sake.id) do %>
+    <% if sake.image.attached? %>
+      <%= image_tag sake.image, size: "80x150" %>
+    <% else %>
+      <%= image_tag 'no_image', size: "150x80" %>
+    <% end %>
+  <% end 
+  
