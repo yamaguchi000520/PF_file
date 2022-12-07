@@ -1,2 +1,13 @@
-<h1>Public::Sakes#show</h1>
-<p>Find me in app/views/public/sakes/show.html.erb</p>
+<div class="conteiner">
+  <div class="row">
+    <%= @sake.customer.name %>
+    <% if @sake.image.attached? %>
+      <%= image_tag @sake.image, size: "300x300" %>
+    <% else %>
+      <%= image_tag 'no_image', size "300x300" %>
+    <% end %>
+    <%= @sake.name %>
+    <%= @sake.introduction %>
+    <%= 
+  </div>
+</div>

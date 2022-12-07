@@ -2,17 +2,18 @@
 <% sakes.each do |sake| %>
   <p><strong><%= sake.customer.name %></strong>さん</p>
   <%= link_to sake_path(sake.id) do %>
-    <% if sake.image.attached? %>
-      <%= image_tag sake.image, size: "80x150" %>
-    <% else %>
-      <%= image_tag 'no_image', size: "150x80" %>
-    <% end %>
-  <% end %>
+    <%# if sake.image.attached? %>
+      <%#= image_tag sake.image, size: "80x150" %>
+    <%# else %>
+      <%#= image_tag 'no_image', size: "150x80" %>
+    <%# end %>
+  <%# end %>
   <%= sake.name %><br>
   <%= sake.introduction %><br>
   <%= sake.price %>
   <%= sake.tag %><br>
   <%= sake.evaluation %>
+  <% end %>
 <% end %>
 </div>
 

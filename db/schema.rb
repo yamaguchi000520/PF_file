@@ -97,7 +97,8 @@ ActiveRecord::Schema.define(version: 2022_12_04_114634) do
 
   create_table "sakes", force: :cascade do |t|
     t.integer "customer_id", null: false
-    t.integer "tag_id", null: false
+    t.integer "genre_id", null: false
+    t.integer "tag_id"
     t.string "name", null: false
     t.string "introduction", null: false
     t.string "price", null: false
