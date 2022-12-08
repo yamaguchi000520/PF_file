@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     resources :sakes, only:[:index,:show,:destroy,:edit,:update,:create] do
-      resources :comments, only:[:edit,:update,:destroy,:create]
+      resources :sake_comments, only:[:edit,:update,:destroy,:create]
       get 'search' => "genres#search"
     end
     get '/customers/my_page' => 'customers#show'
