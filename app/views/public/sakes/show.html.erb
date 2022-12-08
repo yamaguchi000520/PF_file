@@ -1,13 +1,25 @@
 <div class="conteiner">
   <div class="row">
-    <%= @sake.customer.name %>
-    <% if @sake.image.attached? %>
-      <%= image_tag @sake.image, size: "300x300" %>
-    <% else %>
-      <%= image_tag 'no_image', size "300x300" %>
-    <% end %>
-    <%= @sake.name %>
-    <%= @sake.introduction %>
-    <%= 
+    <div class="col-6">
+      <%= @sake.customer.name %>
+      <% if @sake.image.attached? %>
+        <%= image_tag @sake.image, size: "300x300" %>
+      <% else %>
+        <%= image_tag 'no_image', size "300x300" %>
+      <% end %>
+      <%= @sake.name %>
+      <%= @sake.introduction %>
+      <%#=  %>
+      <p>コメント件数 : <%= sake.sake_comments.count %></p>
+      <%= sake.sake_comments.each do |sake_comment| %>
+
+    </div>
+    <div class="col-6">
+      <%= form_with model: [@sake, @sake_comment] do |f| %>
+        <%= f.text_area :comment, row: '5', placeholder: "コメント" %>
+        <%= f.submit "送信する" %>
+      <% end %>
+
+    </div>
   </div>
 </div>

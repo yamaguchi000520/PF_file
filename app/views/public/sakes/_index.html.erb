@@ -13,6 +13,7 @@
   <%= sake.price %>
   <%= sake.tag %><br>
   <%= sake.evaluation %>
+  <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>
   <% end %>
 <% end %>
 </div>

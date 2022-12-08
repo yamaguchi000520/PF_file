@@ -7,6 +7,7 @@ class Public::SakesController < ApplicationController
   def show
     @sake = Sake.find(params[:id])
     @genre = @sake.genre
+    @sake_comment = SakeComment.new
   end
 
   def create
