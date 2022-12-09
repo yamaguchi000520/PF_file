@@ -18,7 +18,7 @@
         <ul class="navbar-nav ml-auto">
         <!--customerでログインしている時-->
         <% if customer_signed_in? %>
-          <li><%= link_to customers_my_page_path(current_customer), class:'btn btn-outline-dark bg-warning mr-3' do %>マイページ<% end %></li>
+          <li><%= link_to customer_path(current_customer), class:'btn btn-outline-dark bg-warning mr-3' do %>マイページ<% end %></li>
           <%#= link_to customers_my_page_path(current_customer), class:'btn btn-outline-dark bg-warning mr-3' do %><%# end %>
           <li><%= link_to sakes_path, class:'btn btn-outline-dark bg-warning mr-3' do %>お酒一覧<% end %></li>
           <li><%= link_to customers_path, class:'btn btn-outline-dark bg-warning mr-3' do %>会員一覧<% end %></li>

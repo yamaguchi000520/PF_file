@@ -11,6 +11,7 @@ class Sake < ApplicationRecord
   def favorited_by?(customer)
     favorites.exists?(customer_id: customer.id)
   end
+  
 
   def get_image(width,height)
     if image.attached?
