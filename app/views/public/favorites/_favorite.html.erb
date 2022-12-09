@@ -1,14 +1,15 @@
 <div class="favorite_btn_<%= sake.id %>">
-<% if sake.favorited_by?(current_customer) %>
-  <p>
-  <%= link_to sake_favorites_path(sake), method: :delete, remote: true do %>
-    ♥<%= sake.favorites.count %>
+  <% if sake.favorited_by?(current_customer) %>
+    <p>
+    <%= link_to sake_favorites_path(sake), method: :delete, remote: true do %>
+      ♥<%= sake.favorites.count %>
+    <% end %>
+    </p>
+  <% else %>
+    <p>
+    <%= link_to sake_favorites_path(sake), method: :post, remote: true do %>
+      ♡<%= sake.favorite.count %>
+    <% end %>
+    </p>
   <% end %>
-  </p>
-<% else %>
-  <p>
-  <%= link_to sake_favorites_path(sake), method: :post, remote: true do %>
-    ♡<%= sake.favorite.count %>
-  <% end %>
-  </p>
 </div>

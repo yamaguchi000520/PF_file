@@ -8,12 +8,13 @@
       <%= image_tag 'no_image', size: "150x80" %>
     <% end %>
   <% end %>
-  <%= sake.name %><br>
-  <%= sake.introduction %><br>
+  <p><%= sake.name %></p><br>
+  <p><%= sake.introduction %></p><br>
   <p><%= sake.price %>円程度</p>
-  <%= sake.tag %><br>
-  <%= sake.evaluation %>
+  <p><%= sake.tag %></p><br>
+  <p><%= sake.evaluation %></p>
   <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>
+  <%= render "public/favorites/favorite", sake: sake %>
 <% end %>
 </div>
 

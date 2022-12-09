@@ -21,16 +21,17 @@ Rails.application.routes.draw do
   scope module: :public do
     resources :sakes, only:[:index,:show,:destroy,:edit,:update,:create] do
       resources :sake_comments, only:[:edit,:update,:destroy,:create]
+      resource :favorites, only:[:create,:destroy]
       get 'search' => "genres#search"
     end
-    get '/customers/my_page' => 'customers#show'
-    get '/customers' => 'customers#index'
-    get '/customers/information/edit' => 'customers#edit'
-    patch '/customers/information' => 'customers#update'
     get '/customers/unsubscribe' => 'customers#unsubscribe'
     patch '/customers/delete_status' => 'customers#is_deleted'
+    resources :customers, only:[:index,:show,:destroy,:edit,:update,:create]
+    # get '/customers/my_page' => 'customers#show'
+    # get '/customers' => 'customers#index'
+    # get '/customers/information/edit' => 'customers#edit'
+    # patch '/customers/information' => 'customers#update'
     resources :tags, only:[:create,:destroy]
     resources :relationships, only:[:index,:destroy,:create]
-    resources :favorites, only:[:create,:destroy]
   end
 end

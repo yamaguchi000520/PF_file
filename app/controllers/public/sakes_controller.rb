@@ -69,5 +69,9 @@ class Public::SakesController < ApplicationController
     params.require(:sake).permit(:genre_id,:name,:price,:introduction,:image)
   end
 
-  # def curren
+  # def current_customer
+  #   @sake = Sake.find(params[:id])
+  #   @customer = @sake.customer
+  #   redirect_to(sakes_path) unless @customer == current_customer
+  # end
 end
