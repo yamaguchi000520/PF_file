@@ -7,11 +7,11 @@ class Sake < ApplicationRecord
   has_many :sake_comments, dependent: :destroy
 
   has_one_attached :image
-  
+
   def favorited_by?(customer)
     favorites.exists?(customer_id: customer.id)
   end
-  
+
 
   def get_image(width,height)
     if image.attached?

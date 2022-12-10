@@ -2,16 +2,16 @@
   <div class="row">
     <div class="col-6">
       <%= @sake.customer.name %>
-      <% if @sake.image.attached? %>
-        <%= image_tag @sake.image, size: "300x300" %>
-      <% else %>
-        <%= image_tag 'no_image', size "300x300" %>
-      <% end %>
+      <%# if @sake.image.attached? %>
+        <%#= image_tag @sake.image, size: "300x300" %>
+      <%# else %>
+        <%#= image_tag 'no_image', size "300x300" %>
+      <%# end %>
       <%= @sake.name %>
       <%= @genre.name %>
       <%= @sake.introduction %>
-      <p>コメント件数 : <%= @sake.sake_comments.count %></p>
-      <%= render "public/sake_comments/comment_new", [sake: @sake, sake_comment: @sake_comment]  %>
+      <p id="comments_count">コメント件数 : <%= @sake.sake_comments.count %></p>
+      <%= render "public/sake_comments/comment_new", sake: @sake, sake_comment: @sake_comment %>
       <%= render "public/sake_comments/comment", sake: @sake %>
     </div>
   </div>

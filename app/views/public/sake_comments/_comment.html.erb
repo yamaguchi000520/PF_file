@@ -1,5 +1,5 @@
 <p>コメント蘭</p>
-<div class="comments_area">
+<div id="sake_comments">
 <table class="table table-borderless">
   <thead>
     <tr>
@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <% sake.sake_comments.each do |sake_comment| %>
-  <tr>
+  <tr id="sake_<%= sake.id %>">
     <td>
     <%= link_to(sake_comment.customer) do %>
       <%#= image_tag sake_comment.user.get_profile_image, size:"50x50" %><br>

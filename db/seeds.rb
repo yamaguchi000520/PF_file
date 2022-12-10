@@ -77,14 +77,24 @@ Sake.create!(
       introduction: "値段の割の味わいとしてはとてもお勧めです。",
       evaluation: 0
 )
-sake.image.attach(io: File.open(Rails.root.join("app/assets/images/no_image.jpg")), filename: "no_image.jpg")
+# sake.image.attach(io: File.open(Rails.root.join("app/assets/images/no_image.jpg")), filename: "no_image.jpg")
 
-Comment.create|(
+SakeComment.create!(
   [
     {
       customer_id: 1,
       sake_id: 1,
       comment: "とても美味しいお酒ですね！"
+    },
+    {
+      customer_id: 1,
+      sake_id: 1,
+      comment: "最高でした"
+    },
+    {
+      customer_id: 1,
+      sake_id: 1,
+      comment: "コスパ○"
     }
   ]
 )
