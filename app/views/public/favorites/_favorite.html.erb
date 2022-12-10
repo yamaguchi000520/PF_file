@@ -2,9 +2,9 @@
   <% if customer_signed_in? %>
     <% if sake.favorited_by?(current_customer) %>
       <p>
-      <%= link_to sake_favorites_path(sake), method: :delete, remote: true do %>
-        ♥<%= sake.favorites.count %>
-      <% end %>
+        <%= link_to sake_favorites_path(sake), method: :delete, remote: true do %>
+          ♥<%= sake.favorites.count %>
+        <% end %>
       </p>
     <% else %>
       <p>
