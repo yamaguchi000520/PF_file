@@ -1,17 +1,24 @@
 class Public::CustomersController < ApplicationController
   def show
-    @customer = current.customer
+    @customer = Customer.find(params[:id])
+    @sakes = @customer.sakes
+    @sake = Sake.new
+  end
+
+  def index
+    @customers = Customer.all
+    @sake = Sake.new
   end
 
   def edit
-    @customer = current_customer
+    @customer = Customer.find(params[:id])
   end
 
   def update
-    @customer = current_customer
+    @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
       flash[:notice] = "登録情報の変更が完了しました。"
-      redirect_to customers_my_page_path
+      redirect_to customer_path
     else
       flash[:notice] = "登録情報の変更に失敗しました。"
       render 'edit'
@@ -31,9 +38,19 @@ class Public::CustomersController < ApplicationController
     redirect_to root_path
   end
 
+  def followers
+    customer = Customer.find(params[:id])
+    @customers = customer.following_user.all
+  end
+
+  def followers
+    customer = Customer.find(params[:id])
+    @customers = customer.follower_customer.all
+  end
+
   private
 
   def customer_params
-   params.require(:customer).permit(:first_name, :last_name, :first_kana, :last_kana, :zip, :address, :phone_number, :email)
+   params.require(:customer).permit(:name, :introduction, :email)
   end
 end
