@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>フォロワー会員</h2>
+  <% if @customer.exists? %>
+    <%= render 'customer/index', customer: @customer %>
+  <% else %>
+    <p>ユーザーはいません。</p>
+  <% end %>
+</div>

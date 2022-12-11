@@ -1,0 +1,31 @@
+<div class="row">
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr>
+        <th>image</th>
+        <th>name</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= customers.each do |customer| %>
+      <tr>
+        <td><%#= image_tag sake.customer.get_profile_image, size: '50x50' %></td>
+        <td><%= customer.name %></td>
+        <td>
+          <p>フォロー数：</p>
+          <%= link_to follows_customer_path(customer) do %>
+            <%= following_customer.count %>
+          <% end %>
+        </td>
+        <td>
+          <p>フォロワー数：</p>
+          <%= link_to followers_customer_path(customer) do %>
+            <%= follower_customer.count %>
+          <% end %>
+        </td>
+        <td><%= link_to "show", customer_path(customer %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
