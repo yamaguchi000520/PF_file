@@ -1,2 +1,42 @@
-<h1>Public::Searches#search</h1>
-<p>Find me in app/views/public/searches/search.html.erb</p>
+<%= render 'searches/searchbox' %>
+<% if @range == "Customer" %>
+<h2>検索結果 "<%= @word %>" </h2>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th></th>
+      <th>name</th>
+      <th>Introduction</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= image_tag customer.get_profile_image, size: '50x50' %></td>
+      <td><%= link_to customer.name, customer_path(customer.id) %></td>
+      <td><%= customer.introduction %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% else %>
+<% @sakes.each do |sake| %>
+<h2>検索結果 "<%= @word %>" </h2>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th></th>
+      <th>name</th>
+      <th>introduction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= image_tag sake.customer.get_profile_image, size:'50x50' %></td>
+      <td><%= link_to sake.name, sake_path(sake.id) %></td>
+      <td><%= sake.introduction %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% end %>

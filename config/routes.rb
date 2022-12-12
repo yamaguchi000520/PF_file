@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :public do
-    get 'searches/search'
-  end
   root to: 'public/homes#top'
   get "about" => "public/homes#about"
   get "admin" => "admin/homes#top"
@@ -22,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
+    get 'search' => 'searches#search'
     resources :sakes, only:[:index,:show,:destroy,:edit,:update,:create] do
       resources :sake_comments, only:[:edit,:update,:destroy,:create]
       resource :favorites, only:[:create,:destroy]
