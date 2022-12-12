@@ -1,7 +1,7 @@
 <div class="container">
   <h2>フォロー会員</h2>
-  <% if @customer.exists? %>
-    <%= render 'customer/index', customer: @customer %>
+  <% if @customer %>
+    <%= render 'public/customers/index', customers: @customers %>
   <% else %>
     <p>ユーザーはいません。</p>
   <% end %>

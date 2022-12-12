@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-md-3">
       <h2>new form</h2>
-      <%#= render 'side_bar', sake: @sake %>
+      <%#= render 'sakes/sidebar', sake: @sake %>
     </div>
     <div class="col-md-8 offset-md-1">
       <%#= render 'searches/searchbox' %>
       <h2>会員一覧</h2>
-      <%= render 'customer/index', customers: @customers %>
+      <%= render 'public/customers/index', customers: @customers %>
     </div>
   </div>
 </div>

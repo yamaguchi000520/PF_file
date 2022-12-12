@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  namespace :public do
+    get 'searches/search'
+  end
   root to: 'public/homes#top'
   get "about" => "public/homes#about"
   get "admin" => "admin/homes#top"
@@ -26,12 +29,15 @@ Rails.application.routes.draw do
     end
     get '/customers/unsubscribe' => 'customers#unsubscribe'
     patch '/customers/delete_status' => 'customers#is_deleted'
-    resources :customers, only:[:index,:show,:destroy,:edit,:update,:create]
+    resources :customers, only:[:index,:show,:destroy,:edit,:update,:create] do
+      get 'followings' => 'relationships#followings', as: 'followings'
+      get 'followers' => 'relationships#followers', as: 'followers'
+      resource :relationships, only:[:destroy,:create]
+    end
     # get '/customers/my_page' => 'customers#show'
     # get '/customers' => 'customers#index'
     # get '/customers/information/edit' => 'customers#edit'
     # patch '/customers/information' => 'customers#update'
     resources :tags, only:[:create,:destroy]
-    resources :relationships, only:[:index,:destroy,:create]
   end
 end
