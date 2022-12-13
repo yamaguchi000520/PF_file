@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :genres, only:[:index,:create,:edit,:update]
     resources :customers, only:[:index,:show,:edit,:update]
+    resources :homes, only:[:create,:edit,:update]
   end
 
   scope module: :public do
