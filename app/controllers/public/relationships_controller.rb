@@ -12,7 +12,10 @@ class Public::RelationshipsController < ApplicationController
 
   def followings
     @customer = Customer.find_by(id: params[:customer_id])
-    @customers = @customer.followings
+    @customers = []
+    if @customer != nil
+      @customers = @customer.followings
+    end
   end
 
   def followers

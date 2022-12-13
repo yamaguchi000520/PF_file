@@ -6,7 +6,7 @@ class Public::CustomersController < ApplicationController
   end
 
   def index
-    # customer = Customer.find_by(id: params[:id])
+    @customer = Customer.find_by(id: params[:id])
     @customers = Customer.all
     @sake = Sake.new
   end

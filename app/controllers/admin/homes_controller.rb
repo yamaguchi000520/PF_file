@@ -21,6 +21,7 @@ class Admin::HomesController < ApplicationController
 
   def edit
     @home = Home.find(params[:id])
+  end
 
   def update
     @home = Home.find(params[:id])
@@ -31,6 +32,13 @@ class Admin::HomesController < ApplicationController
       flash[:notice] = "編集に失敗しました。"
       render :edit
     end
+  end
+
+  def destroy
+    @home = Home.find(params[:id])
+    @home.destroy
+    flash[:notice] = "削除に成功しました。"
+    redirect_to request.referer
   end
 
   private

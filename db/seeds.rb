@@ -59,6 +59,15 @@ Customer.create!(
    ]
 )
 
+Home.create!(
+  [
+    {
+      name: "ビール",
+      introduction: "日本でも愛着のある飲み物"
+    }
+  ]
+)
+
 Tag.create!(
   [
     {
@@ -67,7 +76,6 @@ Tag.create!(
   ]
 )
 
-# sake =
 Sake.create!(
       customer_id: 1,
       genre_id: 2,
