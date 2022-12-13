@@ -21,6 +21,18 @@ class Sake < ApplicationRecord
      image.attach(io: File.open(file_path), filename: 'no_image.jpg', content_type: 'image/jpg')
     end
   end
-
-
+  
+  def self.looks(search, word)
+    if search == "perfect_match"
+      @sake = Sake.where("title LIKE?","#{word}")
+    elsif search == "forward_match"
+      @sake = Sake.where("title LIKE?","#{word}%")
+    elsif search == "backward_match"
+      @sake = Sake.where("title LIKE?","%#{word}")
+    elsif search == "partial_match"
+      @sake = Sake.where("title LIKE?","%#{word}%")
+    else
+      @sake = Sake.all
+    end
+  end
 end

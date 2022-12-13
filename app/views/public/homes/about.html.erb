@@ -1,2 +1,10 @@
-<h1>Public::Homes#about</h1>
-<p>Find me in app/views/public/homes/about.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <% homes.each do |home| %>
+        <%= home.name %>
+        <%= home.introduction %>
+      <% end %>
+    </div>
+  </div>
+</div>

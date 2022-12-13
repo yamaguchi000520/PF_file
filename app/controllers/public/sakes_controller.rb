@@ -65,7 +65,7 @@ class Public::SakesController < ApplicationController
 
   private
 
-  def sake
+  def sake_params
     params.require(:sake).permit(:genre_id,:name,:price,:introduction,:image)
   end
 
