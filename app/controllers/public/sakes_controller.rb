@@ -2,7 +2,8 @@ class Public::SakesController < ApplicationController
   def index
     @sake = Sake.new
     @sakes = Sake.all
-    @genre = Genre.all
+    # @genre = Genre.find(params[:genre_id])
+    @genres = Genre.all
   end
 
   def show
