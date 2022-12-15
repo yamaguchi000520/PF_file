@@ -2,6 +2,7 @@ class Public::SakesController < ApplicationController
   def index
     @sake = Sake.new
     @sakes = Sake.all
+    @genre = Genre.all
   end
 
   def show
@@ -61,6 +62,13 @@ class Public::SakesController < ApplicationController
   def followeds
     customer = Customer.find(paramas[:id])
     @customers = customer.follower_customer_all
+  end
+
+  def genre_search
+    @genres = Genre.all
+    @search = params[:genre]
+    @sakes_many = Sake.search_for(@search)
+    @sakes = Genre.search_for(@search)
   end
 
   private
