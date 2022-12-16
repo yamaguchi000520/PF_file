@@ -3,17 +3,26 @@
     <div class="col-9">
       <div class="d-flex">
         <p style="font-size:35px"><%= @search %>一覧</p>
-        <p style="font-size:25px; line-height: 2;">(全<%= @sakes_many.count %>件)</p>
+        <p style="font-size:25px; line-height: 2;">(全<%#= @sakes_many.count %>件)</p>
       </div>
 
       <div class="d-flex flex-wrap items_width">
         <% @sakes.each do |sake| %>
-          <div class="mx-3 my-3">
-            <%#= link_to sake_path(sake) do %>
-              <%#= image_tag sake.get_image, size: "200x160" %>
-            <%# end %><br>
-            <%= sake.name %><br>
-          </div>
+          <p><strong><%#= sake.customer.name %></strong>さん</p>
+          <%= link_to sake_path(sake.id) do %>
+            <% if sake.image.attached? %>
+              <%= image_tag sake.image, size: "80x150" %>
+            <% else %>
+              <%= image_tag 'no_image', size: "150x80" %>
+            <% end %>
+          <% end %>
+          <p><%= sake.name %></p><br>
+          <p><%= sake.introduction %></p><br>
+          <p><%= sake.price %>円程度</p>
+          <p><%= sake.tag %></p><br>
+          <p><%= sake.evaluation %></p>
+          <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>
+          <%= render "public/favorites/favorite", sake: sake %>
         <% end %>
       </div>
 

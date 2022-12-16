@@ -13,7 +13,7 @@ class Sake < ApplicationRecord
   end
 
 
-  def get_image(width,height)
+  def get_sake_image(width,height)
     if image.attached?
       image.variant(resize_to_limit: [width, height]).processed
     else
@@ -21,7 +21,7 @@ class Sake < ApplicationRecord
      image.attach(io: File.open(file_path), filename: 'no_image.jpg', content_type: 'image/jpg')
     end
   end
-  
+
   def self.looks(search, word)
     if search == "perfect_match"
       @sake = Sake.where("title LIKE?","#{word}")

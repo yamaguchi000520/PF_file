@@ -66,10 +66,17 @@ class Public::SakesController < ApplicationController
   end
 
   def genre_search
-    @genres = Genre.all
-    @search = params[:genre]
-    @sakes_many = Sake.search_for(@search)
-    @sakes = Genre.search_for(@search)
+    if params[:genre_id]
+      @genre = Genre.find(params[:genre_id])
+      @sakes = @genre.sakes.order(created_at: :desc).all
+    else
+      @sakes= Genre.order(created_at: :desc).all
+    end
+    # @genres = Genre.all
+    # @genre = Genre.find(params[:genre_id])
+    # @search = params[:genre]
+    # @sakes_many = Sake.search_for(@search)
+    # @sakes = Genre.search_for(@search)
   end
 
   private
