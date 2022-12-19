@@ -1,9 +1,12 @@
 <div class="conteiner px-3">
   <div class="row">
+    <div class="col-3 sidebar">
+
     <%= render 'public/sakes/sidebar', genres: @genres, sake: @sake %>
-  </div>
-  <div class="row">
-    <div class="col-5 offset-md-4">
+    </div>
+  <!--</div>-->
+  <!--<div class="row">-->
+    <div class="col-7 offset-md-1 py-3">
 
     <%= render '/public/sakes/index', sakes: @sakes %>
 
