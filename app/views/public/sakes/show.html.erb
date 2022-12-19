@@ -3,7 +3,7 @@
     <div class="offset-md-1 col-2">
       <%= link_to customer_path(@sake.customer) do %>
         <%= @sake.customer.name %><br>
-        <%= image_tag @sake.get_sake_image, size: "150x200" %>
+        <%= image_tag @sake.customer.get_profile_image, size: "150x200" %>
       <% end %>
     </div>
     <div class="col-4">

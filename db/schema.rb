@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 2022_12_13_014526) do
     t.string "name", null: false
     t.string "introduction", null: false
     t.string "price", null: false
-    t.string "evaluation", null: false
+    t.string "evaluation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

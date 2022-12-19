@@ -8,7 +8,7 @@ class CreateSakes < ActiveRecord::Migration[6.1]
       t.string :name, null:false
       t.string :introduction, null:false
       t.string :price, null:false
-      t.string :evaluation, null:false
+      t.string :evaluation
 
       t.timestamps
     end

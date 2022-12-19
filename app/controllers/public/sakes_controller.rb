@@ -18,13 +18,14 @@ class Public::SakesController < ApplicationController
     @sake.customer_id = current_customer.id
     if @sake.save
       flash[:notice] = "投稿が成功しました。"
-      redirect_to sakes_path(@sake.id)
+      redirect_to sake_path(@sake.id)
     else
       flash[:notice] = "未入力項目があります。"
       @genres = Genre.all
       @sake = Sake.new(sake_params)
+      @sakes = Sake.all
       @customer = current_customer
-      render 'new'
+      render "index"
     end
   end
 
