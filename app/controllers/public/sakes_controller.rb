@@ -10,6 +10,7 @@ class Public::SakesController < ApplicationController
     @sake = Sake.find(params[:id])
     @genre = @sake.genre
     @sake_comment = SakeComment.new
+    @customer = Customer
   end
 
   def create
@@ -82,7 +83,7 @@ class Public::SakesController < ApplicationController
   private
 
   def sake_params
-    params.require(:sake).permit(:genre_id,:name,:price,:introduction,:image)
+    params.require(:sake).permit(:genre_id,:name,:price,:introduction,:sake_image)
   end
 
   # def current_customer

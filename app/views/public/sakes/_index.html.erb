@@ -1,19 +1,23 @@
 <div>
-<% sakes.each do |sake| %>
-  <p><strong><%= sake.customer.name %></strong>さん</p>
-  <%#= link_to sake_path(sake.id) do %>
-  <%= link_to sake_path(sake) do %>
-    <%= image_tag sake.get_sake_image, size: "190x150" %>
-  <% end %>
+  <% sakes.each do |sake| %>
+    <div class="row">
+      <div class="col-2">
+        <p><strong><%= sake.customer.name %></strong>さん</p>
+        <%= link_to sake_path(sake) do %>
+          <%= image_tag sake.get_sake_image, size: "190x150" %>
+        <% end %>
+      </div>
 
-  <p><%= sake.name %></p>
-  <p><%= sake.introduction %></p>
-  <p><%= sake.price %>円程度</p>
-  <p><%= sake.tag %></p>
-  <p><%= sake.evaluation %></p>
-  <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>
-  <%= render "public/favorites/favorite", sake: sake %>
-<% end %>
+      <div class="col-4">
+        <p><%= sake.name %></p>
+        <p><%= sake.introduction %></p>
+        <p><%= sake.price %>円程度</p>
+        <p><%= sake.tag %>|<%= sake.evaluation %></p>
+        <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>|
+        <%= render "public/favorites/favorite", sake: sake %>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 

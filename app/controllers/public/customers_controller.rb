@@ -6,7 +6,7 @@ class Public::CustomersController < ApplicationController
   end
 
   def index
-    @customer = Customer.find_by(id: params[:id])
+    # @customer = Customer.find_by(id: params[:id])
     @customers = Customer.all
     @sake = Sake.new
   end
@@ -52,6 +52,6 @@ class Public::CustomersController < ApplicationController
   private
 
   def customer_params
-   params.require(:customer).permit(:name, :introduction, :email,:profile_image)
+   params.require(:customer).permit(:name, :introduction, :email, :profile_image)
   end
 end
