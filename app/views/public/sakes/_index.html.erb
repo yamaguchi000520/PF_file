@@ -1,17 +1,15 @@
 <div>
 <% sakes.each do |sake| %>
   <p><strong><%= sake.customer.name %></strong>さん</p>
-  <%= link_to sake_path(sake.id) do %>
-    <% if sake.image.attached? %>
-      <%= image_tag sake.image, size: "80x150" %>
-    <% else %>
-      <%= image_tag 'no_image', size: "150x80" %>
-    <% end %>
+  <%#= link_to sake_path(sake.id) do %>
+  <%= link_to sake_path(sake) do %>
+    <%= image_tag sake.get_sake_image, size: "190x150" %>
   <% end %>
-  <p><%= sake.name %></p><br>
-  <p><%= sake.introduction %></p><br>
+
+  <p><%= sake.name %></p>
+  <p><%= sake.introduction %></p>
   <p><%= sake.price %>円程度</p>
-  <p><%= sake.tag %></p><br>
+  <p><%= sake.tag %></p>
   <p><%= sake.evaluation %></p>
   <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>
   <%= render "public/favorites/favorite", sake: sake %>
