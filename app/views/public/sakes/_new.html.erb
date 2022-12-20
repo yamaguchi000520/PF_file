@@ -13,9 +13,7 @@
     </p>
   </div>
   <div class="form-group">
-    <%= f.text_field :price, placeholder: "3000", class: 'form-control sake_price' %>
-      <p>円程度</p>
-    </%>
+    <p>金額：<%= f.text_field :price, placeholder: "3000", class: 'sake_price', size: 10 %>円程度</p>
   </div>
   <div class="form-group">
     <%= f.text_area :introduction, placeholder: "お酒の紹介文", class: 'form-control sake_introduction', rows: "5" %>

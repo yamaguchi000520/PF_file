@@ -50,16 +50,18 @@ Customer.create!(
     {
         name: 'ラーメン好き太郎',
         introduction: '初めまして、ラーメン好きの人です。',
-        email: 'i@i',
-        password: 'iiiiii'
+        email: "i@i",
+        password: 'iiiiii',
+        profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/test.jpg"), filename: 'default-image.jpeg')
     },
     {
         name: 'ウイスキー毎日飲酒',
         introduction: '常飲酒はホワイトホースくんです。',
         email: 'a@a',
-        password: 'aaaaaa'
+        password: 'aaaaaa',
+        profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/test.jpg"), filename: 'default-image.jpeg')
     }
-   ]
+  ]
 )
 
 Home.create!(
@@ -138,7 +140,7 @@ SakeComment.create!(
       comment: "とても美味しいお酒ですね！"
     },
     {
-      customer_id: 1,
+      customer_id: 2,
       sake_id: 1,
       comment: "最高でした"
     },

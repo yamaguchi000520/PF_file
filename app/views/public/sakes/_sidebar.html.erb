@@ -1,5 +1,11 @@
-<div class="col-3 sidebar bg-dark text-white">
-  <%= render "public/sakes/new", sake: sake %>
+<div class="col-3 sidebar bg-dark text-white hight_max px-5">
+  <% if customer_signed_in? %>
+    <%= render "public/sakes/new", sake: sake %>
+  <% else %>
+    <p>新規投稿するために会員登録をしてみよう<br>=>
+    <%= link_to new_customer_registration_path, class: 'btn btn-outline-dark bt-info' do %>新規登録<% end %>
+    </p>
+  <% end %>
 
   <div class="accordion" id="accordionExample">
     <div class="card">

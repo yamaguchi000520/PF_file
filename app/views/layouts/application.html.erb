@@ -14,10 +14,11 @@
 
   <body>
     <%= render 'layouts/header' %>
-      <main>
-        <%= render 'public/searches/searchbox' %>
+    <div class="body">
+      <div class="container-fluid">
         <%= yield %>
-      </main>
+      </div>
+    </div>
     <%= render 'layouts/footer' %>
   </body>
 </html>
