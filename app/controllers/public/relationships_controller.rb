@@ -10,6 +10,14 @@ class Public::RelationshipsController < ApplicationController
     current_customer.unfollow(customer)
   end
 
+  def followers
+    @customer = Customer.find_by(id: params[:customer_id])
+    @customers = []
+    if @customer != nil
+      @customers = @customer.followers
+    end
+  end
+
   def followings
     @customer = Customer.find_by(id: params[:customer_id])
     @customers = []
@@ -18,8 +26,8 @@ class Public::RelationshipsController < ApplicationController
     end
   end
 
-  def followers
-    @customer = Customer.find_by(id: params[:customer_id])
-    @customer = @customer.followers
-  end
+  # def followers
+  #   @customer = Customer.find_by(id: params[:customer_id])
+  #   @customer = @customer.followers
+  # end
 end

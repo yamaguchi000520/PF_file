@@ -1,31 +1,35 @@
-<h2 class = 'col-2 bg-light'>マイページ</h2>
+<div class="m-5">
+  <h2 class = 'col-2 bg-light'>マイページ</h2>
+</div>
 <div class = 'row'>
-  <p class = 'col-2'><strong>登録情報</strong></p>
+  <p class = 'offset-md-1 col-2'><strong>登録情報</strong></p>
   <p><%= link_to "編集する", edit_customer_path, class: 'btn btn-success' %></p>
 </div>
-<div class = 'row col-8'>
-  <table class = 'table table-bordered'>
-    <tbody>
-      <tr>
-        <td class = 'col-1 bg-light'>ニックネーム</td>
-        <td class = 'col-3'><%= @customer.name %></td>
-      </tr>
-      <tr>
-        <td class = 'col-1 bg-light'>自己紹介</td>
-        <td class = 'col-3'><%= @customer.introduction %></td>
-      </tr>
-      <tr>
-        <td class = 'col-1 bg-light'>メールアドレス</td>
-        <td class = 'col-3'><%= @customer.email %></td>
-      </tr>
-    </tbody>
-  </table>
+<div class = 'row'>
+  <div class="offset-md-1 col-8">
+    <table class = 'table table-bordered'>
+      <tbody>
+        <tr>
+          <td class = 'col-1 bg-light'>ニックネーム</td>
+          <td class = 'col-3'><%= @customer.name %></td>
+        </tr>
+        <tr>
+          <td class = 'col-1 bg-light'>自己紹介</td>
+          <td class = 'col-3'><%= @customer.introduction %></td>
+        </tr>
+        <tr>
+          <td class = 'col-1 bg-light'>メールアドレス</td>
+          <td class = 'col-3'><%= @customer.email %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<div class = 'row mr-5'>
+<div class = 'row mr-5 offset-md-1'>
   <p class = 'col-2'><strong>フォロー</stromg></p>
   <p><%= link_to "一覧を見る",customer_followings_path(@customer), class: 'btn btn-primary' %></p>
 </div>
-<div class = 'row mr-5'>
+<div class = 'row mr-5 offset-md-1'>
   <p class = 'col-2'><strong>フォロワー</strong></p>
   <p><%= link_to "一覧を見る", customer_followers_path(@customer), class: 'btn btn-primary' %></p>
 </div>
