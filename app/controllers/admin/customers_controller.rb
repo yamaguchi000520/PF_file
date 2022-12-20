@@ -1,5 +1,5 @@
 class Admin::CustomersController < ApplicationController
-  befor_action :authenticate_admin!
+  before_action :authenticate_admin!
   def index
     @customers = Customer.all
   end

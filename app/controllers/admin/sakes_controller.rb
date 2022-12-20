@@ -1,5 +1,5 @@
 class Admin::SakesController < ApplicationController
-  befor_action :authenticate_admin!
+  before_action :authenticate_admin!
   def index
     @sakes = Sake.all
   end
