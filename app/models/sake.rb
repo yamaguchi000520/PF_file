@@ -9,8 +9,7 @@ class Sake < ApplicationRecord
   validates :name, presence:true
   validates :introduction, presence:true
   validates :genre_id, presence:true
-  validates :email, presence:true
-  validates :email, presence:true
+
 
   has_one_attached :sake_image
 
@@ -18,9 +17,9 @@ class Sake < ApplicationRecord
     favorites.exists?(customer_id: customer.id)
   end
 
-  def get_sake_image
-    (sake_image.attached?) ? sake_image : 'no_image.jpg'
-  end
+  # def get_sake_image
+  #   (sake_image.attached?) ? sake_image : 'no_image.jpg'
+  # end
   # def get_image
   #   unless image.attached?
   #     file_path = Rails.root.join('app/assets/images/no_image.jpg')
@@ -29,14 +28,14 @@ class Sake < ApplicationRecord
   #   image
   # end
 
-  # def get_sake_image(width,height)
-  #   if sake_image.attached?
-  #     sake_image.variant(resize_to_limit: [width, height]).processed
-  #   else
-  #     file_path = Rails.root.join('app/assets/images/no_image.jpg')
-  #     sake_image.attach(io: File.open(file_path), filename: 'no_image.jpg', content_type: 'image/jpg')
-  #   end
-  # end
+  def get_sake_image(width,height)
+    if sake_image.attached?
+      sake_image.variant(resize_to_limit: [width, height]).processed
+    else
+      file_path = Rails.root.join('app/assets/images/no_image.jpg')
+      sake_image.attach(io: File.open(file_path), filename: 'default_image.jpg', content_type: 'image/jpeg')
+    end
+  end
 
   def self.looks(search, word)
     if search == "perfect_match"

@@ -15,8 +15,17 @@ class Customer < ApplicationRecord
 
   has_one_attached :profile_image
 
-  def get_profile_image
-    (profile_image.attached) ? profile_image: 'no_image.jpg'
+  # def get_profile_image
+  #   (profile_image.attached) ? profile_image: 'no_image.jpg'
+  # end
+
+  def get_profile_image(width,height)
+    if profile_image.attached?
+      profile_image.variant(resize_to_limit: [width, height]).processed
+    else
+      file_path = Rails.root.join('app/assets/images/no_image.jpg')
+      profile_image.attach(io: File.open(file_path), filename: 'default_image.jpg', content_type: 'image/jpeg')
+    end
   end
 
   def follow(customer)

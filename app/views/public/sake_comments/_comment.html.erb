@@ -12,7 +12,7 @@
   <tr id="sake_<%= sake.id %>">
     <td>
     <%= link_to(sake_comment.customer) do %>
-      <%= image_tag sake_comment.customer.get_profile_image, size:"50x50" %><br>
+      <%= image_tag sake_comment.customer.get_profile_image(50,50) %><br>
       <%= sake_comment.customer.name %>|<%= sake_comment.created_at.strftime('%Y/%m/%d') %>
     <% end %>
     </td>

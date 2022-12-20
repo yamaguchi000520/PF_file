@@ -122,13 +122,29 @@ Tag.create!(
 )
 
 Sake.create!(
+  [
+    {
+      customer_id: 1,
+      genre_id: 1,
+      name: "シメイ・ブルー",
+      price: 500,
+      tag_id: 1,
+      introduction: "コクが深く少し高めの値段ですがとてもお勧めです。",
+      # evaluation: 0
+      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/chimay.jpg"), filename: 'default-image.jpeg')
+
+    },
+    {
       customer_id: 1,
       genre_id: 2,
       name: "black label",
       price: 2100,
       tag_id: 1,
       introduction: "値段の割の味わいとしてはとてもお勧めです。",
-      evaluation: 0
+      # evaluation: 0
+      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/blacklabel.jpg"), filename: 'default-image.jpeg')
+    }
+  ]
 )
 # sake.image.attach(io: File.open(Rails.root.join("app/assets/images/no_image.jpg")), filename: "no_image.jpg")
 
