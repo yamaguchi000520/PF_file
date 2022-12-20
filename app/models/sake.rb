@@ -2,7 +2,7 @@ class Sake < ApplicationRecord
 
   belongs_to :customer
   belongs_to :genre
-  belongs_to :tag
+  belongs_to :tag, optional: true
   has_many :favorites, dependent: :destroy
   has_many :sake_comments, dependent: :destroy
 

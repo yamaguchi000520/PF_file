@@ -12,11 +12,11 @@
         <p><%= sake.name %></p>
         <p><%= sake.introduction %></p>
         <p><%= sake.price %>円程度</p>
-        <p>
-          <%= sake.tag %>|
-          <%= sake.evaluation %>
-        </p>
-        <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>|
+        <!--<p>-->
+        <!--  <%#= sake.tag %>|-->
+        <!--  <%#= sake.evaluation %>-->
+        <!--</p>-->
+        <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>
         <%= render "public/favorites/favorite", sake: sake %>
       </div>
     </div>

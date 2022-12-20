@@ -4,7 +4,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :configure_sign_up_params, only: [:create]
   def after_sign_up_path_for(_resource)
-    customer_path
+    root_path
   end
   # before_action :configure_account_update_params, only: [:update]
 
