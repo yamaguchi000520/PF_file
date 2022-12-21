@@ -10,6 +10,10 @@
     <table class = 'table table-bordered'>
       <tbody>
         <tr>
+          <td class = 'col-1 bg-light'>プロフィール画像</td>
+          <td class = 'col-3'><%= image_tag @customer.get_profile_image(100,100) %></td>
+        </tr>
+        <tr>
           <td class = 'col-1 bg-light'>ニックネーム</td>
           <td class = 'col-3'><%= @customer.name %></td>
         </tr>

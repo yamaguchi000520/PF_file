@@ -20,5 +20,6 @@
 /*}*/
 
 .hight_max{
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 200px;
 }

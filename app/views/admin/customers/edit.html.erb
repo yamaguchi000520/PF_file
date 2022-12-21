@@ -3,7 +3,7 @@
     <h4><strong>会員情報の変更</strong></h4>
   </div>
 </div>
-  <%= form_with model: @customer, local: true do |f| %>
+  <%= form_with model: [:admin, @customer], local: true do |f| %>
 
     <div class="row mt-4">
       <div class="col-3 text-center">

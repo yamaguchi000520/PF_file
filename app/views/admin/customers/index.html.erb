@@ -15,17 +15,15 @@
           <tr>
             <td><%= image_tag customer.get_profile_image(50,50) %></td>
             <td><%= customer.name %></td>
-            <td><%= link_to "show", customer_path(customer), class: 'btn btn-success' %></td>
+            <td><%= link_to "show", admin_customer_path(customer), class: 'btn btn-success' %></td>
             <td>投稿件数：<%= customer.sakes.count %></td>
-            <%= if customer.is_deleted == true %>
-              <td>
+            <td>
+              <% if customer.is_deleted == true %>
                 ステータス：<p class="text-secondary">退会済み</p>
-              </td>
-            <% else %>
-              <td>
+              <% else %>
                 ステータス：<p class="text-success">有効</p>
-              </td>
-            <% end %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

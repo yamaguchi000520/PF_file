@@ -32,8 +32,8 @@ Rails.application.routes.draw do
       resource :favorites, only:[:create,:destroy]
       get 'search' => "genres#search"
     end
-    get '/customers/:id/unsubscribe' => 'customers#unsubscribe'
-    patch '/customers/:iddelete_status' => 'customers#is_deleted'
+    get '/customers/:id/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
+    patch '/customers/delete_status' => 'customers#is_deleted'
     resources :customers, only:[:index,:show,:destroy,:edit,:update,:create] do
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'

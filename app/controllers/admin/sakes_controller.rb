@@ -11,5 +11,7 @@ class Admin::SakesController < ApplicationController
 
   def destroy
     @sake = Sake.find(params[:id])
+    @sake.destroy
+    render "index"
   end
 end
