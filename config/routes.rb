@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :genres, only:[:index,:create,:edit,:update,:destroy]
-    resources :sakes, only:[:index,:destroy]
+    resources :sakes, only:[:show,:index,:destroy]
     resources :customers, only:[:index,:show,:edit,:update]
     get "homes/about" => "homes#about"
     resources :homes, only:[:create,:edit,:update,:destroy]
@@ -32,8 +32,8 @@ Rails.application.routes.draw do
       resource :favorites, only:[:create,:destroy]
       get 'search' => "genres#search"
     end
-    get '/customers/unsubscribe' => 'customers#unsubscribe'
-    patch '/customers/delete_status' => 'customers#is_deleted'
+    get '/customers/:id/unsubscribe' => 'customers#unsubscribe'
+    patch '/customers/:iddelete_status' => 'customers#is_deleted'
     resources :customers, only:[:index,:show,:destroy,:edit,:update,:create] do
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'

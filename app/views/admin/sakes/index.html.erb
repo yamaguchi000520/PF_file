@@ -1,7 +1,7 @@
 <div class="m-5">
   <div class="row">
-    <div class="col-md-7 offset-md-1">
-      <h2>会員一覧</h2>
+    <div class="col-md-110 offset-md-1">
+      <h2>投稿一覧</h2>
       <table class="table">
         <thead>
           <tr>
@@ -12,13 +12,16 @@
           </tr>
         </thead>
         <tbody>
-          <% sakes.each do |sake| %>
+          <% @sakes.each do |sake| %>
             <tr>
-              <td><%= image_tag sake.customer.get_profile_image(50,50) %></td>
-              <td><%= sake.name %></td>
+              <td><%= image_tag sake.get_sake_image(50,50) %></td>
+              <td><p><%= sake.name %><br><%= sake.genre.name %></p></td>
               <td><%= sake.introduction %></td>
-              <td><%= link_to "削除", sake_path(sake.id), method: :delete %></td>
-              <td><%= form_with</td>
+              <td>♥<%= sake.favorites.count %>/コメント件数：<%= sake.sake_comments.count %></td>
+              <td>
+                  <%= link_to "内容", sake_path(sake.id), class: 'btn btn-sm btn-success' %>
+                  <%= link_to "削除", sake_path(sake.id), method: :delete, class: 'btn btn-sm btn-danger' %>
+              </td>
             </tr>
           <% end %>
         </tbody>
