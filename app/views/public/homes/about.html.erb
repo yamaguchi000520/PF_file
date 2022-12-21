@@ -1,10 +1,26 @@
-<div class="container">
-  <div class="row">
-    <div class="col-4">
-      <% @homes.each do |home| %>
-        <%= home.name %>
-        <%= home.introduction %>
-      <% end %>
-    </div>
+<div class="about_image">
+  <div class="card-list-containar py-2">
+    <% @homes.each do |home| %>
+      <div class="card w-25 mx-aut mt-4 shadow-lg offset-3">
+        <div class="card-body flex-fill p-2">
+          <div class="row">
+            <div class="col-12">
+              <p style="font-family: serif; font-size: 20px;"><strong><%= home.name %></strong></p>
+              <p style="font-family: serif;"><%= home.introduction %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card w-25 mx-aut mt-4 shadow-lg offset-5">
+        <div class="card-body flex-fill p-2">
+          <div class="row">
+            <div class="col-12">
+              <p style="font-family: serif; font-size: 20px;"><strong><%= home.name %></strong></p>
+              <p style="font-family: serif;"><%= home.introduction %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
