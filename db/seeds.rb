@@ -132,7 +132,6 @@ Sake.create!(
       introduction: "コクが深く少し高めの値段ですがとてもお勧めです。",
       # evaluation: 0
       sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/chimay.jpeg"), filename: 'default-image.jpeg')
-
     },
     {
       customer_id: 1,

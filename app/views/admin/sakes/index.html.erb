@@ -1,9 +1,5 @@
-<div class="container p-3">
+<div class="m-5">
   <div class="row">
-    <div class="col-md-3">
-      <%#= render "public/sakes/sidebar", sake: @sake %>
-      <%#= render "public/sakes/new", sake: @sake %>
-    </div>
     <div class="col-md-7 offset-md-1">
       <h2>会員一覧</h2>
       <table class="table">
@@ -11,16 +7,17 @@
           <tr>
             <th>image</th>
             <th>name</th>
+            <th>introduction</th>
             <th colspan="3"></th>
           </tr>
         </thead>
         <tbody>
-          <% customers.each do |customer| %>
+          <% sakes.each do |sake| %>
             <tr>
-              <td><%#= image_tag customer.get_profile_image, size: '50x50' %></td>
-              <td><%= customer.name %></td>
-              <td><%= render "public/relationships/followbtn", customer: customer %></td>
-              <td><%= link_to "show", customer_path(customer) %></td>
+              <td><%= image_tag sake.customer.get_profile_image(50,50) %></td>
+              <td><%= sake.name %></td>
+              <td><%= sake.introduction %></td>
+              <td><%= link_to "削除", sake_path(sake.id), method: :delete %></td>
               <td><%= form_with</td>
             </tr>
           <% end %>

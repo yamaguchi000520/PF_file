@@ -28,7 +28,7 @@ class Admin::HomesController < ApplicationController
     @home = Home.find(params[:id])
     if @home.update(home_params)
       flash[:notice] = "編集を保存しました。"
-      redirect_to request.referer
+      redirect_to admin_homes_about_path
     else
       flash[:notice] = "編集に失敗しました。"
       render :edit

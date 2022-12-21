@@ -1,26 +1,21 @@
-<div class='container mt-4'>
+<div class='m-5'>
   <div class='row'>
     <div class="ml-5">
-  		<h2 class="bg-light my-3">アバウト編集</h2>
+  		<h2 class="my-3">アバウト編集</h2>
   	</div>
   </div>
 
+  <div class="row-md mt-5">
   <%= form_with model: @home, url:admin_home_path(@home.id), method: :patch do |f| %>
-  <div class="row mt-5">
-    <div class="col-12 mb-3">
-      <div class="row">
-        <%= f.label :"お酒の種類", class: 'col-2' %>
-          <div class="col-4">
-            <%= f.text_field:name, class: 'form-control book_title' %>
-          </div>
-          <div class="col-4">
-            <%= f.text_area:introduction, class: 'form-control book_title' %>
-          </div>
-          <div class="col-2 ml-3">
-            <%= f.submit '変更を保存', class:"btn btn-success" %>
-          </div>
-      </div>
+    <div class="form-group row">
+      <%= f.label :"お酒の種類：", class: 'col-md-2 text-center mt-3 offset-md-1' %>
+      <%= f.text_field :name, class: 'form-control col-md-4 mt-3 home_name' %>
     </div>
-  </div>
+    <div class="form-group row">
+      <%= f.label :"お酒の紹介：", class: 'col-md-2 text-center mt-3 offset-md-1' %>
+      <%= f.text_area :introduction, class: 'form-control col-md-6 mt-3 home_introduction', rows: "5" %>
+      <%= f.submit '変更を保存', class: 'btn btn-success m-2 mt-5' %>
+    </div>
   <% end %>
+  </div>
 </div>

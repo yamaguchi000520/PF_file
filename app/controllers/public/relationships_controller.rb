@@ -25,9 +25,4 @@ class Public::RelationshipsController < ApplicationController
       @customers = @customer.followings
     end
   end
-
-  # def followers
-  #   @customer = Customer.find_by(id: params[:customer_id])
-  #   @customer = @customer.followers
-  # end
 end
