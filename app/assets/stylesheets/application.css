@@ -25,7 +25,7 @@
 }
 
 .about_image{
-  background-image: url(about.jpg);
+  background-image: image-url("about.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
