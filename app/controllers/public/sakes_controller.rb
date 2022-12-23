@@ -1,4 +1,5 @@
 class Public::SakesController < ApplicationController
+  before_action :correct_customer && :correct_admin, only: [:edit, :update, :destroy, :create]
   def index
     @sake = Sake.new
     @sakes = Sake.all
@@ -10,7 +11,7 @@ class Public::SakesController < ApplicationController
     @sake = Sake.find(params[:id])
     @genre = @sake.genre
     @sake_comment = SakeComment.new
-    @customer = Customer
+    @customer = @sake.customer
   end
 
   def create
@@ -43,7 +44,7 @@ class Public::SakesController < ApplicationController
     @sake = Sake.find(params[:id])
     if @sake.update(sake_params)
       flash[:notice] = "更新に成功しました。"
-      redirect_to :show
+      redirect_to sakes_path
     else
       flash[:notice] = "未入力欄があります。"
       @genres = Genre.all
@@ -56,7 +57,7 @@ class Public::SakesController < ApplicationController
     @sake.destroy
     redirect_to sakes_path
   end
-  
+
   def new
     @sake = Sake.new
   end
@@ -91,9 +92,14 @@ class Public::SakesController < ApplicationController
     params.require(:sake).permit(:genre_id,:name,:price,:introduction,:sake_image)
   end
 
-  # def current_customer
-  #   @sake = Sake.find(params[:id])
-  #   @customer = @sake.customer
-  #   redirect_to(sakes_path) unless @customer == current_customer
-  # end
+  def correct_customer
+    @sake = Sake.find(params[:id])
+    @customer = @sake.customer
+    redirect_to(sakes_path) unless @customer == current_customer
+  end
+
+  def correct_admin
+    redirect_to(sakes_path) unless admin_signed_in?
+  end
+
 end
