@@ -19,6 +19,9 @@
         <% if customer_signed_in? %>
           <p class="text-left text-light ml-5">ようこそ、<%= current_customer.name %>さん！</p>
         <% end %>
+        <% if admin_signed_in? %>
+          <h3 class="text-left text-dark ml-5">管理者画面</h3>
+        <% end %>
 
         <ul class="navbar-nav ml-auto">
         <!--customerでログインしている時-->
