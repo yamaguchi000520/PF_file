@@ -56,6 +56,10 @@ class Public::SakesController < ApplicationController
     @sake.destroy
     redirect_to sakes_path
   end
+  
+  def new
+    @sake = Sake.new
+  end
 
   def follows
     customer = Customer.find(params[:id])

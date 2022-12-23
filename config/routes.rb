@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   scope module: :public do
     get 'search' => 'searches#search'
     get 'genre_search' => 'sakes#genre_search'
-    resources :sakes, only:[:index,:show,:destroy,:edit,:update,:create] do
+    resources :sakes, only:[:index,:show,:destroy,:edit,:update,:create,:new] do
       resources :sake_comments, only:[:edit,:update,:destroy,:create]
       resource :favorites, only:[:create,:destroy]
       get 'search' => "genres#search"
