@@ -1,8 +1,8 @@
 class Public::SakesController < ApplicationController
-  before_action :correct_customer && :correct_admin, only: [:edit, :update, :destroy, :create]
+  before_action :correct_customer, only: [:edit, :update, :destroy, :create]
   def index
     @sake = Sake.new
-    @sakes = Sake.all
+    @sakes = Sake.page(params[:page])
     # @genre = Genre.find(params[:genre_id])
     @genres = Genre.all
   end

@@ -8,7 +8,7 @@ class Public::CustomersController < ApplicationController
   def index
     # @customer = Customer.find_by(id: params[:id])
     @genres = Genre.all
-    @customers = Customer.all
+    @customers = Customer.page(params[:page])
     @sake = Sake.new
   end
 

@@ -1,7 +1,7 @@
 class Admin::SakesController < ApplicationController
   before_action :authenticate_admin!
   def index
-    @sakes = Sake.all
+    @sakes = Sake.page(params[:page])
   end
 
   def show
