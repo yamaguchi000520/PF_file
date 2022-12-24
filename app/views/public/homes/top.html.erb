@@ -35,7 +35,7 @@
 
 <div class="row mt-3">
   <div class="col-3"></div>
-  <% @sakes.each do |sake| %>
+  <% @sakes.first(4).each do |sake| %>
     <div class="col-2">
       <div>
         <%= link_to sake_path(sake) do %>

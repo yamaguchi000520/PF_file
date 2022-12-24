@@ -12,6 +12,8 @@ class Public::SakesController < ApplicationController
     @genre = @sake.genre
     @sake_comment = SakeComment.new
     @customer = @sake.customer
+    # @comments_first = @sake.comments.first(3)
+    # @comments_offset = @sake.comments.offset(3)
   end
 
   def create

@@ -25,13 +25,15 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="offset-md-2 col-4">
-    <%= render "public/sake_comments/comment_new", sake: @sake, sake_comment: @sake_comment %>
+<% if customer_signed_in? %>
+  <div class="row">
+    <div class="offset-md-2 col-4">
+      <%= render "public/sake_comments/comment_new", sake: @sake, sake_comment: @sake_comment %>
+    </div>
   </div>
-</div>
+<% end %>
 
-<div class="row">
+<div class="row mb-5">
   <div class="offset-md-2 col-5">
     <%= render "public/sake_comments/comment", sake: @sake %>
   </div>
