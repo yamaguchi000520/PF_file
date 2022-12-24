@@ -1,4 +1,5 @@
 class Public::SakeCommentsController < ApplicationController
+  before_action :authenticate_customer!
 
   def create
     @sake = Sake.find(params[:sake_id])

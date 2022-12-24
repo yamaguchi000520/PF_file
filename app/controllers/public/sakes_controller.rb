@@ -1,5 +1,5 @@
 class Public::SakesController < ApplicationController
-  before_action :correct_customer, only: [:edit, :update, :destroy, :create]
+  before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
   def index
     @sake = Sake.new
     @sakes = Sake.page(params[:page])
@@ -92,14 +92,10 @@ class Public::SakesController < ApplicationController
     params.require(:sake).permit(:genre_id,:name,:price,:introduction,:sake_image)
   end
 
-  def correct_customer
+  def ensure_correct_customer
     @sake = Sake.find(params[:id])
-    @customer = @sake.customer
-    redirect_to(sakes_path) unless @customer == current_customer
+    unless @sake.customer == current_customer
+      redirect_to sakes_path
+    end
   end
-
-  def correct_admin
-    redirect_to(sakes_path) unless admin_signed_in?
-  end
-
 end
