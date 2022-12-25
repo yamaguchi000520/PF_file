@@ -1,6 +1,6 @@
 <header class="image_tag">
   <% if admin_signed_in? %>
-    <nav class="navbar navbar-expand-md navbar-light bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
   <% else %>
     <nav class="navbar navbar-expand-md navbar-light bg-dark">
   <% end %>
@@ -26,8 +26,8 @@
         <ul class="navbar-nav ml-auto">
         <!--customerでログインしている時-->
         <% if customer_signed_in? %>
-          <li><%= link_to new_sake_path, class:'btn btn-outline-dark bg-warning mr-3' do %>新規投稿<% end %></li>
-          <li><%= link_to customer_path(current_customer), class:'btn btn-outline-dark bg-white mr-3' do %>マイページ<% end %></li>
+          <li><%= link_to new_sake_path, class:'btn btn-outline-dark bg-warning mr-3 w-100px' do %>新規投稿<% end %></li>
+          <li><%= link_to customer_path(current_customer), class:'btn btn-outline-dark bg-white mr-3 w-100px' do %>マイページ<% end %></li>
           <li><%= link_to sakes_path, class:'btn btn-outline-dark bg-white mr-3' do %>お酒一覧<% end %></li>
           <li><%= link_to customers_path, class:'btn btn-outline-dark bg-white mr-3' do %>会員一覧<% end %></li>
           <li><%= link_to destroy_customer_session_path, method: :delete, class:'btn btn-outline-dark bg-white mr-3' do %>ログアウト<% end %></li>

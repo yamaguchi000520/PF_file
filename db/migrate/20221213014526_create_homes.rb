@@ -3,7 +3,7 @@ class CreateHomes < ActiveRecord::Migration[6.1]
     create_table :homes do |t|
 
       t.string :name, null:false
-      t.string :introduction, null:false
+      t.text :introduction
 
       t.timestamps
     end
