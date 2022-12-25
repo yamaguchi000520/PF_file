@@ -1,34 +1,38 @@
-<div class="m-5">
-  <div class = 'row m-4'>
-    <h4 class = 'bg-light mt-4 ml-2 offset-md-2'><strong>管理者ログインページ</strong></h4>
+<div class="row">
+  <div class="col-md-4 offset-md-3">
+    <h4 class = 'mt-4 ml-2 offset-md-2'><strong>管理者ログイン</strong></h4>
   </div>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= render "admin/shared/error_messages", resource: resource %>
-
-    <div class="row mt-4">
-      <div class="col-3 text-center">
-        <%= f.label :メールアドレス %><br/>
-      </div>
-      <div class="offset-md-1 col-4">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-3 text-center">
-        <%= f.label :パスワード %>
-      </div>
-      <div class="offset-md-1 col-4">
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="actions py-4 col-3 offset-md-1">
-        <%= f.submit "ログイン", class: "btn btn-success btn-block" %>
-      </div>
-    </div>
-  <% end %>
-
-  <%= render "admin/shared/links" %>
 </div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="row">
+    <div class="col-7 offset-md-2 text-danger">
+      <%= render "admin/shared/error_messages", resource: resource %>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-2 offset-md-3">
+      <%= f.label :メールアドレス %><br/>
+    </div>
+    <div class="col-4">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-2 offset-md-3">
+      <%= f.label :パスワード %>
+    </div>
+    <div class="col-4">
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="actions py-4 col-3 offset-md-3">
+      <%= f.submit "ログイン", class: "btn btn-success btn-block" %>
+    </div>
+  </div>
+<% end %>
+
+<%= render "admin/shared/links" %>
