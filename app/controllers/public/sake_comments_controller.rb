@@ -3,9 +3,11 @@ class Public::SakeCommentsController < ApplicationController
 
   def create
     @sake = Sake.find(params[:sake_id])
-    comment = current_customer.sake_comments.new(sake_comment_params)
-    comment.sake_id = @sake.id
-    comment.save
+    @comment = current_customer.sake_comments.new(sake_comment_params)
+    @comment.sake_id = @sake.id
+    unless @comment.save
+      render 'errors'
+    end
 
     # @sake_comment = SakeComments.new(sake_comment_params)
     # @sake_comment.sake_id = @sake.id
