@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
+    resources :genres, only:[:index]
     get 'search' => 'searches#search'
     get 'genre_search' => 'sakes#genre_search'
     resources :sakes, only:[:index,:show,:destroy,:edit,:update,:create,:new] do

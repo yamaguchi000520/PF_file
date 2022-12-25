@@ -1,0 +1,7 @@
+<div class="row">
+  <%= render 'public/sakes/sidebar', genres: @genres, sake: @sake %>
+  <div class="col-7 offset-md-1 py-3">
+    <%= render 'public/searches/searchbox' %>
+    <%= render '/public/sakes/index', sakes: @sakes %>
+  </div>
+</div>
