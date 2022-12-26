@@ -1,33 +1,41 @@
-<div class="row d-flex mt-5 ">
-
-    <div class="col-9">
-      <div class="d-flex">
-        <p style="font-size:35px"><%= @search %>一覧</p>
-        <p style="font-size:25px; line-height: 2;">(全<%#= @sakes_many.count %>件)</p>
-      </div>
-
-      <div class="d-flex flex-wrap items_width">
+<div class="row">
+  <%= render 'public/sakes/sidebar', genres: @genres, sake: @sake %>
+  <div class="col-7 offset-md-1 py-3">
+    <%= render 'public/searches/searchbox' %>
+    <h3 class="m-4"><%= @search_genre %>一覧</h3>
+    <p>(全<%= @sakes_all.count %>件)</p>
+      <div class="card-list-containar py-2">
         <% @sakes.each do |sake| %>
-          <p><strong><%#= sake.customer.name %></strong>さん</p>
-          <%#= link_to sake_path(sake.id) do %>
-            <%# if sake.image.attached? %>
-              <%#= image_tag sake.image, size: "80x150" %>
-            <%# else %>
-              <%#= image_tag 'no_image', size: "150x80" %>
-            <%# end %>
-          <%# end %>
-          <p><%= sake.name %></p><br>
-          <p><%= sake.introduction %></p><br>
-          <p><%= sake.price %>円程度</p>
-          <p><%= sake.tag %></p><br>
-          <p><%= sake.evaluation %></p>
-          <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>
-          <%= render "public/favorites/favorite", sake: sake %>
+          <div class="card w-100 mx-aut mt-4 shadow-lg">
+            <div class="card-body flex-fill p-2">
+              <div class="row">
+                <div class="col-5">
+                  <p><strong><%= sake.customer.name %></strong>さん</p>
+                  <%= link_to sake_path(sake) do %>
+                    <%= image_tag sake.get_sake_image(190,150) %>
+                  <% end %>
+                </div>
+
+                <div class="col-5 p-2">
+                  <p><%= sake.name %></p>
+                  <p><%= sake.introduction %></p>
+                  <p><%= sake.price %>円程度</p>
+                  <!--<p>-->
+                  <!--  <%#= sake.tag %>|-->
+                  <!--  <%#= sake.evaluation %>-->
+                  <!--</p>-->
+                  <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>
+                  <%= render "public/favorites/favorite", sake: sake %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
       </div>
-
-      <div class="row justify-content-center my-4">
-        <%#= paginate @products, theme: 'bootstrap-5' %>
+      <div class="row mt-3 mb-5">
+        <div class="col-11 offset-md-1 d-flex mx-auto">
+          <%= paginate @sakes, theme: 'twitter-bootstrap-4' %>
+        </div>
       </div>
-    </div>
+  </div>
 </div>
