@@ -19,8 +19,8 @@
               <td><%= sake.introduction %></td>
               <td>♥<%= sake.favorites.count %>/コメント件数：<%= sake.sake_comments.count %></td>
               <td>
-                  <%= link_to "内容", sake_path(sake.id), class: 'btn btn-sm btn-success' %>
-                  <%= link_to "削除", sake_path(sake.id), method: :delete, class: 'btn btn-sm btn-danger' %>
+                  <%= link_to "内容", admin_sake_path(sake.id), class: 'btn btn-sm btn-success' %>
+                  <%= link_to "削除", admin_sake_path(sake.id), method: :delete, class: 'btn btn-sm btn-danger' %>
               </td>
             </tr>
           <% end %>

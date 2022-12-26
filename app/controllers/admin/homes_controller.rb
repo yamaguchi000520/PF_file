@@ -45,6 +45,6 @@ class Admin::HomesController < ApplicationController
   private
 
   def home_params
-    params.require(:home).permit(:name,:introduction,:image)
+    params.require(:home).permit(:name,:introduction)
   end
 end

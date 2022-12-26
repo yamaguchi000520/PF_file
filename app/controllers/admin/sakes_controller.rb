@@ -1,7 +1,7 @@
 class Admin::SakesController < ApplicationController
   before_action :authenticate_admin!
   def index
-    @sakes = Sake.page(params[:page])
+    @sakes = Sake.page(params[:page]).per(20)
   end
 
   def show
@@ -12,6 +12,6 @@ class Admin::SakesController < ApplicationController
   def destroy
     @sake = Sake.find(params[:id])
     @sake.destroy
-    render "index"
+    redirect_to admin_sakes_path
   end
 end
