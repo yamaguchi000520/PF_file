@@ -6,16 +6,16 @@
   </div>
 
   <div class="row-md mt-5">
-  <%= form_with model: @home, url:admin_home_path(@home.id), method: :patch do |f| %>
-    <div class="form-group row">
-      <%= f.label :"お酒の種類：", class: 'col-md-2 text-center mt-3 offset-md-1' %>
-      <%= f.text_field :name, class: 'form-control col-md-4 mt-3 home_name' %>
+    <%= form_with model: @home, url:admin_home_path(@home.id), method: :patch do |f| %>
+      <div class="form-group row">
+        <%= f.label :"お酒の種類：", class: 'col-md-2 text-center mt-3 offset-md-1' %>
+        <%= f.text_field :name, class: 'form-control col-md-4 mt-3 home_name' %>
+      </div>
+      <div class="form-group row">
+        <%= f.label :"お酒の紹介：", class: 'col-md-2 text-center mt-3 offset-md-1' %>
+        <%= f.text_area :introduction, class: 'form-control col-md-6 mt-3 home_introduction', rows: "5" %>
+        <%= f.submit '変更を保存', class: 'btn btn-success m-2 mt-5' %>
+      </div>
+    <% end %>
     </div>
-    <div class="form-group row">
-      <%= f.label :"お酒の紹介：", class: 'col-md-2 text-center mt-3 offset-md-1' %>
-      <%= f.text_area :introduction, class: 'form-control col-md-6 mt-3 home_introduction', rows: "5" %>
-      <%= f.submit '変更を保存', class: 'btn btn-success m-2 mt-5' %>
-    </div>
-  <% end %>
-  </div>
 </div>

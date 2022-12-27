@@ -1,5 +1,5 @@
 <%= form_with model:sake, url: sakes_path, method: :post, local: true do |f| %>
-  <%#= render 'layouts/errors', obj: sake %>
+  <%= render 'layouts/errors', obj: sake %>
   <div class="form-group">
     <p>画像</p>
     <%= f.file_field :sake_image, accept: "image/*" %>

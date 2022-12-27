@@ -16,8 +16,8 @@
   <div class="col-md-9">
     <div class="top_content">
       <%= image_tag "top_image.jpg", style: "width: 100%; height: 400px; position: relative; background-size: cover;" %>
-      <p style="position:absolute; top:130px; left:100px; background-color:rgba(0,0,0,0.7); color:#FFF; font-size:23px;">
-        ようこそ、<strong style="font-family: serif;">Al-comi</strong>へ！<br>
+      <p class="top_message">
+        ようこそ、<strong class="serif">Al-comi</strong>へ！<br>
         本サイトは、お酒に対するコミュニティサイトになります。<br>
         会員でない方も投稿の内容はご確認いただけます。<br>
         会員登録をすると、投稿やフォロー機能をご使用いただけます。<br>
@@ -35,22 +35,22 @@
 
 <div class="row mt-3">
   <div class="col-3"></div>
-  <% @sakes.first(4).each do |sake| %>
-    <div class="col-2">
-      <div>
-        <%= link_to sake_path(sake) do %>
-          <%= image_tag sake.get_sake_image(190,150) %>
-        <% end %>
+    <% @sakes.first(4).each do |sake| %>
+      <div class="col-2">
+        <div>
+          <%= link_to sake_path(sake) do %>
+            <%= image_tag sake.get_sake_image(190,150) %>
+          <% end %>
+        </div>
+        <div>
+          <%= sake.customer.name %>
+        </div>
+        <div>
+          <%= sake.name %>
+        </div>
       </div>
-      <div>
-        <%= sake.customer.name %>
-      </div>
-      <div>
-        <%= sake.name %>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
   <div class="row my-3">
     <div class="col-10"></div>

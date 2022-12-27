@@ -4,7 +4,7 @@
   </div>
 </div>
   <%= form_with model: @sake, url: sakes_path, method: :post, local: true do |f| %>
-    <%#= render 'layouts/errors', obj: sake %>
+    <%= render 'layouts/errors', obj: @sake %>
     <div class="row mt-4">
       <div class="col-3 text-center">
          <%= f.label :お酒の画像 %>

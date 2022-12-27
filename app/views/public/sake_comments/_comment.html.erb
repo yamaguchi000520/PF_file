@@ -39,16 +39,16 @@
           </thead>
           <tr id="sake_<%= sake.id %>">
             <td>
-            <%= link_to(sake_comment.customer) do %>
-              <%= image_tag sake_comment.customer.get_profile_image(50,50) %><br>
-              <%= sake_comment.customer.name %>|<%= sake_comment.created_at.strftime('%Y/%m/%d') %>
-            <% end %>
+              <%= link_to(sake_comment.customer) do %>
+                <%= image_tag sake_comment.customer.get_profile_image(50,50) %><br>
+                <%= sake_comment.customer.name %>|<%= sake_comment.created_at.strftime('%Y/%m/%d') %>
+              <% end %>
             </td>
             <td><%= sake_comment.comment %></td>
             <td>
-            <% if sake_comment.customer == current_customer %>
-              <%= link_to "削除", sake_sake_comment_path(sake_comment.sake, sake_comment), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger", remote: true %>
-            <% end %>
+              <% if sake_comment.customer == current_customer %>
+                <%= link_to "削除", sake_sake_comment_path(sake_comment.sake, sake_comment), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger", remote: true %>
+              <% end %>
             </td>
           </tr>
         <% end %>
