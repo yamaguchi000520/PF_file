@@ -31,7 +31,7 @@
           </tr>
         </thead>
           <% @sake.sake_comments.each do |sake_comment| %>
-          <tr id="sake_<%= sake.id %>">
+          <tr>
             <td>
             <%= link_to(sake_comment.customer) do %>
               <%= image_tag sake_comment.customer.get_profile_image(50,50) %><br>
