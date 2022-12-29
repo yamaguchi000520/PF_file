@@ -29,7 +29,7 @@ class Customer < ApplicationRecord
   end
 
   def unfollow(customer)
-    follower.find_by(followed_id: customer.id).destroy
+    relationships.find_by(followed_id: customer.id).destroy
   end
 
   def following?(customer)
