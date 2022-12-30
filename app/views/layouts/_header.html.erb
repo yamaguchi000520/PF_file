@@ -43,7 +43,8 @@
           <li><%= link_to sakes_path, class:'btn btn-outline-dark  bg-white mr-3' do %>お酒一覧<% end %></li>
           <li><%= link_to about_path, class:'btn btn-outline-dark bg-white mr-3' do %>アバウト<% end %></li>
           <li><%= link_to new_customer_registration_path, class:'btn btn-outline-dark bg-white mr-3' do %>新規登録<% end %></li>
-          <li><%= link_to new_customer_session_path,  class:'btn btn-outline-dark text-danger bg-white' do %>ログイン<% end %></li>
+          <li><%= link_to 'ログイン', new_customer_session_path,  class:'btn btn-outline-dark text-danger bg-white' %></li>
+          <li><%= link_to 'ゲストログイン（閲覧用）', public_guest_login_path, class: "btn btn-secondary mr-3", method: :post %></li>
         <% end %>
         </ul>
       </div>

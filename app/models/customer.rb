@@ -24,6 +24,15 @@ class Customer < ApplicationRecord
     end
   end
 
+  # ゲストログイン機能
+  def self.guest
+    find_or_create_by!(name: 'ゲスト会員' ,email: 'guest@example.com') do |customer|
+      customer.password = SecureRandom.urlsafe_base64
+      customer.name = "ゲスト会員"
+    end
+  end
+
+  # フォローフォロワー機能
   def follow(customer)
     relationships.create(followed_id: customer.id)
   end
@@ -43,6 +52,7 @@ class Customer < ApplicationRecord
     super && (is_deleted == false)
   end
 
+  # 検索機能
   def self.looks(search, word)
     if search == "perfect_match"
       @customer = Customer.where("name LIKE?", "#{word}")

@@ -3,7 +3,11 @@
 </div>
 <div class = 'row'>
   <p class = 'offset-md-1 col-2'><strong>登録情報</strong></p>
-  <p><%= link_to "編集する", edit_customer_path, class: 'btn btn-success' %></p>
+  <p>
+    <% if customer.name != guest %>
+      <%= link_to "編集する", edit_customer_path, class: 'btn btn-success' %>
+    <% end %>
+  </p>
 </div>
 <div class = 'row'>
   <div class="offset-md-1 col-8">
