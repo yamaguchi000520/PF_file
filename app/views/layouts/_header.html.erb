@@ -9,7 +9,7 @@
     <%#= link_to root_path do %>
       <%#= image_tag 'al_comi_logo.jpeg', size: "200x50" %>
     <%# end %>
-      <p class="logotitle"><%= link_to root_path, class:'btn btn-outline-white bg-dark text-white mr-3' do %>Al-comi<% end %></p>
+      <%= link_to root_path, class:'btn btn-outline-light bg-dark text-white mr-3 logotitle' do %>Al-comi<% end %>
       <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon bg-white"></span>
       </button>
@@ -26,25 +26,25 @@
         <ul class="navbar-nav ml-auto">
         <!--customerでログインしている時-->
         <% if customer_signed_in? %>
-          <li><%= link_to new_sake_path, class:'btn btn-outline-dark bg-warning mr-3 w-100px' do %>新規投稿<% end %></li>
-          <li><%= link_to customer_path(current_customer), class:'btn btn-outline-dark bg-white mr-3 w-100px' do %>マイページ<% end %></li>
-          <li><%= link_to sakes_path, class:'btn btn-outline-dark bg-white mr-3' do %>お酒一覧<% end %></li>
-          <li><%= link_to customers_path, class:'btn btn-outline-dark bg-white mr-3' do %>会員一覧<% end %></li>
-          <li><%= link_to destroy_customer_session_path, method: :delete, class:'btn btn-outline-dark bg-white mr-3' do %>ログアウト<% end %></li>
+          <li><%= link_to '新規投稿', new_sake_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3 w-100px' %></li>
+          <li><%= link_to 'マイページ', customer_path(current_customer), class:'btn btn-outline-light bg-dark text-white mr-3 my-3 w-100px' %></li>
+          <li><%= link_to 'お酒一覧', sakes_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3' %></li>
+          <li><%= link_to '会員一覧', customers_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3' %></li>
+          <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete, class:'btn btn-outline-light bg-dark text-warning mr-3 my-3' %></li>
         <!--adminでログインしている時-->
         <% elsif admin_signed_in? %>
-          <li><%= link_to admin_homes_about_path, class:'btn btn-outline-dark bg-white mr-3' do %>アバウト<% end %></li>
-          <li><%= link_to admin_customers_path, class:'btn btn-outline-dark bg-white mr-3' do %>会員一覧<% end %></li>
-          <li><%= link_to admin_sakes_path, class:'btn btn-outline-dark bg-white mr-3' do %>投稿一覧<% end %></li>
-          <li><%= link_to admin_genres_path, class:'btn btn-outline-dark bg-white mr-3' do %>ジャンル一覧<% end %></li>
-          <li><%= link_to destroy_admin_session_path, method: :delete, class:'btn btn-outline-dark bg-white' do %>ログアウト<% end %></li>
+          <li><%= link_to 'アバウト', admin_homes_about_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3' %></li>
+          <li><%= link_to '会員一覧', admin_customers_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3'  %></li>
+          <li><%= link_to '投稿一覧', admin_sakes_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3'  %></li>
+          <li><%= link_to 'ジャンル一覧', admin_genres_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3'  %></li>
+          <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class:'btn btn-outline-light bg-dark text-warning my-3' %></li>
         <!--ログインしていない状態-->
         <% else %>
-          <li><%= link_to sakes_path, class:'btn btn-outline-dark  bg-white mr-3' do %>お酒一覧<% end %></li>
-          <li><%= link_to about_path, class:'btn btn-outline-dark bg-white mr-3' do %>アバウト<% end %></li>
-          <li><%= link_to new_customer_registration_path, class:'btn btn-outline-dark bg-white mr-3' do %>新規登録<% end %></li>
-          <li><%= link_to 'ログイン', new_customer_session_path,  class:'btn btn-outline-dark text-danger bg-white' %></li>
-          <li><%= link_to 'ゲストログイン（閲覧用）', public_guest_login_path, class: "btn btn-secondary mr-3", method: :post %></li>
+          <li><%= link_to 'お酒一覧', sakes_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3' %></li>
+          <li><%= link_to 'アバウト', about_path, class:'btn btn-outline-light bg-dark text-whitee mr-3 my-3' %></li>
+          <li><%= link_to 'ログイン', new_customer_session_path,  class:'btn btn-outline-light bg-dark text-warning mr-3 my-3' %></li>
+          <li><%= link_to '新規登録', new_customer_registration_path, class:'btn btn-outline-dark bg-white mr-3 my-3' %></li>
+          <li><%= link_to 'ゲストログイン（閲覧用）', public_guest_login_path, class: "btn btn-outline-light bg-dark text-white mr-3 my-3", method: :post %></li>
         <% end %>
         </ul>
       </div>

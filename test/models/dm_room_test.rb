@@ -1,6 +1,6 @@
 require "test_helper"
 
-class Public::GusetSessionsControllerTest < ActionDispatch::IntegrationTest
+class DmRoomTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

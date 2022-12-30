@@ -46,11 +46,16 @@
 
 <div class="row mt-5">
   <div class="col-4 offset-md-3">
-    <p style="font-size:21px; text-align:center;">新規登録する方は</p>
+    <p style="font-size:21px;">新規登録する方は</p>
   </div>
 </div>
 <div class="row">
   <div class="col-6 offset-md-3">
     <%= render "public/shared/links" %>から新規登録してください。
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 offset-md-3">
+    <%= link_to 'ゲストログイン（閲覧用）', public_guest_login_path, class: "btn btn-outline-light bg-dark text-white mr-3 my-3", method: :post %></li>
   </div>
 </div>

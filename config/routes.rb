@@ -45,10 +45,7 @@ Rails.application.routes.draw do
       get 'followers' => 'relationships#followers', as: 'followers'
       resource :relationships, only:[:destroy,:create]
     end
-    # get '/customers/my_page' => 'customers#show'
-    # get '/customers' => 'customers#index'
-    # get '/customers/information/edit' => 'customers#edit'
-    # patch '/customers/information' => 'customers#update'
+    resources :chats, only:[:show, :create]
     resources :tags, only:[:create,:destroy]
   end
 end

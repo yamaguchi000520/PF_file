@@ -5,10 +5,16 @@ class Customer < ApplicationRecord
   has_many :sakes, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :sake_comments, dependent: :destroy
+
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :follower
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followings, through: :relationships, source: :followed
+
+  has_many :dm_rooms
+  has_many :chats
+  has_many :room, through: :dm_rooms
+
 
   validates :name, presence:true, length: { minimum: 1, maximum: 20 }
   validates :email, presence:true
@@ -26,9 +32,9 @@ class Customer < ApplicationRecord
 
   # ゲストログイン機能
   def self.guest
-    find_or_create_by!(name: 'ゲスト会員' ,email: 'guest@example.com') do |customer|
+    find_or_create_by!(name: 'guest' ,email: 'guest@example.com') do |customer|
       customer.password = SecureRandom.urlsafe_base64
-      customer.name = "ゲスト会員"
+      customer.name = "guest"
     end
   end
 

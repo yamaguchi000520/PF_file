@@ -4,7 +4,7 @@
 <div class = 'row'>
   <p class = 'offset-md-1 col-2'><strong>登録情報</strong></p>
   <p>
-    <% if customer.name != guest %>
+    <% if @customer.name != guest %>
       <%= link_to "編集する", edit_customer_path, class: 'btn btn-success' %>
     <% end %>
   </p>
@@ -40,4 +40,9 @@
 <div class = 'row mr-5 offset-md-1'>
   <p class = 'col-2'><strong>フォロワー</strong></p>
   <p><%= link_to "一覧を見る", customer_followers_path(@customer), class: 'btn btn-primary' %></p>
+</div>
+<div class = 'row mr-5 offset-md-1 chat'>
+  <% if current_customer != customer && current_customer.following?(@customer) && customer.following?(current_customer) %>
+    <p><%= link_to "チャットを始める", chat_path(@customer.id), class: 'btn btn-primary col-2' %></p>
+  <% end %>
 </div>

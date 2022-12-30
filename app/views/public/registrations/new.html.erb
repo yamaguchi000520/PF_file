@@ -59,12 +59,17 @@
 
 <div class="row mt-5">
   <div class="col-4 offset-md-3">
-    <p style="font-size:21px; text-align:center;">既に登録済みの方は</p>
+    <p style="font-size:21px;">既に登録済みの方は</p>
   </div>
 </div>
 
 <div class="row">
   <div class="col-6 offset-md-3">
     <%= render "public/shared/links" %>からログインしてください。
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 offset-md-3">
+    <%= link_to 'ゲストログイン（閲覧用）', public_guest_login_path, class: "btn btn-outline-light bg-dark text-white mr-3 my-3", method: :post %></li>
   </div>
 </div>
