@@ -1,5 +1,5 @@
 class Public::ChatsController < ApplicationController
-  before_action :regect_non_related, only: [show]
+  before_action :regect_non_related, only: [:show]
 
   def show
     @customer = Customer.find(params[:id])
@@ -28,7 +28,7 @@ class Public::ChatsController < ApplicationController
     params.require(:chat).permit(:message, :room_id)
   end
 
-  def reject_non_related
+  def regect_non_related
     customer = Customer.find(params[:id])
     unless current_customer.following?(customer) && customer.following?(current_customer)
       redirect_to sakes_path
