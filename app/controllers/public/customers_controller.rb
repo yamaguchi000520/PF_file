@@ -9,7 +9,6 @@ class Public::CustomersController < ApplicationController
   end
 
   def index
-    # @customer = Customer.find_by(id: params[:id])
     @genres = Genre.all
     @customers = Customer.page(params[:page]).per(10)
     @sake = Sake.new

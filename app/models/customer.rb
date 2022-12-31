@@ -21,6 +21,7 @@ class Customer < ApplicationRecord
 
   has_one_attached :profile_image
 
+  # 画像ファイルについて
   def get_profile_image(width,height)
     if profile_image.attached?
       profile_image.variant(resize_to_limit: [width, height]).processed

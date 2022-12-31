@@ -1,4 +1,4 @@
-<%= render 'searches/searchbox' %>
+<%= render 'public/searches/searchbox' %>
 <% if @range == "Customer" %>
 <h2>検索結果 "<%= @word %>" </h2>
 <table class="table table-hover table-inverse">
@@ -12,7 +12,7 @@
   <tbody>
   <% @customers.each do |customer| %>
     <tr>
-      <td><%= image_tag customer.get_profile_image, size: '50x50' %></td>
+      <td><%#= image_tag customer.get_profile_image(50,50) %></td>
       <td><%= link_to customer.name, customer_path(customer.id) %></td>
       <td><%= customer.introduction %></td>
     </tr>
@@ -32,7 +32,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= image_tag sake.customer.get_profile_image, size:'50x50' %></td>
+      <td><%#= image_tag sake.customer.get_profile_image, size:'50x50' %></td>
       <td><%= link_to sake.name, sake_path(sake.id) %></td>
       <td><%= sake.introduction %></td>
     </tr>
