@@ -72,11 +72,11 @@ class Public::SakesController < ApplicationController
   end
 
   def genre_search
+    @sake = Sake.new
     @genres = Genre.all
     @search_genre = params[:genre]
     @sakes_all = Genre.search_for(@search_name)
     @sakes = Kaminari.paginate_array(Genre.search_for(@search_genre)).page(params[:page]).per(5)
-
   end
 
   private

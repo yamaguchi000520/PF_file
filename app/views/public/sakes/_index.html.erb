@@ -4,7 +4,8 @@
       <div class="card-body flex-fill p-2">
         <div class="row">
           <div class="col-5">
-            <p><strong><%= sake.customer.name %></strong>さん</p>
+            <p>
+              <strong><%= link_to customer_path(sake.customer) do %><%= sake.customer.name %><% end %></strong>さん</p>
             <%= link_to sake_path(sake) do %>
               <%= image_tag sake.get_sake_image(190,150) %>
             <% end %>
@@ -27,7 +28,7 @@
   <% end %>
 </div>
 <div class="row mt-3 mb-5">
-  <div class="col-11 offset-md-1 d-flex mx-auto">
+  <div class="col-5 offset-md-1 d-flex mx-auto">
     <%= paginate sakes, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>
