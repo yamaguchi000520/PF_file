@@ -1,31 +1,43 @@
-<div class="row">
+
   <table class="table table-hover table-inverse">
     <thead>
       <tr>
-        <th>image</th>
-        <th>name</th>
-        <th colspan="3"></th>
+      <th width="20%"></th>
+      <th width="30%"></th>
+      <th colspan="2"></th>
       </tr>
     </thead>
     <tbody>
-      <%= customers.each do |customer| %>
+      <% customers.each do |customer| %>
       <tr>
-        <td><%= image_tag customer.get_profile_image, size: '50x50' %></td>
-        <td><%= customer.name %></td>
         <td>
-          <p>フォロー数：</p>
-          <%= link_to follows_customer_path(customer) do %>
-            <%= following_customer.count %>
+          <%= link_to customer_path(customer) do %>
+            <%= image_tag customer.get_profile_image(50,50) %>
+            <p><%= customer.name %></p>
           <% end %>
         </td>
         <td>
-          <p>フォロワー数：</p>
-          <%= link_to customer_followers_customer_path(customer) do %>
-            <%= follower_customer.count %>
+          <p>
+            フォロー数：
+            <%= link_to customer_followings_path(customer) do %>
+              <%= customer.followings.count %>
+            <% end %>
+          </p>
+          <p>
+            フォロワー数：
+            <%= link_to customer_followers_path(customer) do %>
+              <%= customer.followers.count %>
+            <% end %>
+          </p>
+        </td>
+        <td>
+          <%= render "public/relationships/followbtn", customer: customer %>
+          <% if current_customer != @customer && current_customer.following?(@customer) && @customer.following?(current_customer) %>
+            <%= link_to "チャットを始める", chat_path(@customer.id), class: 'btn btn-success' %>
           <% end %>
         </td>
-        <td><%= link_to "show", customer_path(customer) %></td>
+        <td>投稿件数：<%= customer.sakes.count %></td>
       </tr>
+      <% end %>
     </tbody>
   </table>
-</div>

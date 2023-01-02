@@ -65,7 +65,19 @@
   text-align: left;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1000px) and (max-width: 1200px) {
+  .customer-name {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+  .customer-name {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
   .sidebar {
     display: none;
   }

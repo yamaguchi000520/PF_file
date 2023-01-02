@@ -1,6 +1,8 @@
 <div class="row">
+  <div class="col-3 sidebar bg-dark text-white hight_max px-5">
   <%= render 'public/sakes/sidebar', genres: @genres, sake: @sake %>
-  <div class="col-7 offset-md-1 py-3">
+  </div>
+  <div class="col-lg-8 offset-md-1 py-3">
     <%= render 'public/searches/customersearch' %>
     <h2>会員一覧</h2>
     <%= render 'public/customers/index', customers: @customers %>
