@@ -1,6 +1,5 @@
-<div class="row mt-5">
-  <div class="col-1"></div>
-  <div class="col-2">
+<div class="row m-5 mx-auto justify-content-center">
+  <div class="col-md-2">
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
@@ -14,48 +13,47 @@
   </div>
 
   <div class="col-md-9">
-    <div class="top_content">
-      <%= image_tag "top_image.jpg", style: "width: 100%; height: 400px; position: relative; background-size: cover;" %>
-      <p class="top_message">
-        ようこそ、<strong class="serif">Al-comi</strong>へ！<br>
-        本サイトは、お酒に対するコミュニティサイトになります。<br>
-        会員でない方も投稿の内容はご確認いただけます。<br>
-        会員登録をすると、投稿やフォロー機能をご使用いただけます。<br>
-        ※実際の試飲は20歳を越えてから楽しみましょう。
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="row mt-3">
-  <div class="offset-md-2 col-3">
-    <h2>新着投稿</h2>
-  </div>
-</div>
-
-<div class="row mt-3">
-  <div class="col-3"></div>
-    <% @sakes.first(4).each do |sake| %>
-      <div class="col-2">
-        <div>
-          <%= link_to sake_path(sake) do %>
-            <%= image_tag sake.get_sake_image(190,150) %>
-          <% end %>
-        </div>
-        <div>
-          <%= sake.customer.name %>
-        </div>
-        <div>
-          <%= sake.name %>
-        </div>
+    <div class="top-visual">
+      <div class="top-content">
+        <p class="top-message">
+          ようこそ、<strong class="serif">Al-comi</strong>へ！<br>
+          本サイトは、お酒に対するコミュニティサイトになります。<br>
+          会員でない方も投稿の内容はご確認いただけます。<br>
+          会員登録をすると、投稿やフォロー機能をご使用いただけます。<br>
+          ※実際の試飲は20歳を越えてから楽しみましょう。
+        </p>
       </div>
-    <% end %>
-  </div>
-
-  <div class="row my-3">
-    <div class="col-10"></div>
-    <div class="col-2">
-      <%= link_to "全ての投稿を閲覧する", sakes_path, class: "btn btn-secondary" %>
     </div>
+  </div>
+</div>
+
+<div class="row mb-5 mx-auto justify-content-center">
+  <div class="col-5">
+    <h2 class="top-push">新着投稿</h2>
+  </div>
+</div>
+
+<div class="row mb-5 mx-auto justify-content-center">
+  <div class="offset-md-2"></div>
+  <% @sakes.first(4).each do |sake| %>
+    <div class="col-md-2">
+      <div>
+        <%= link_to sake_path(sake) do %>
+          <%= image_tag sake.get_sake_image(190,150) %>
+        <% end %>
+      </div>
+      <div>
+        <%= sake.customer.name %>
+      </div>
+      <div>
+        <%= sake.name %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="row mb-5 mx-auto float-right">
+  <div class="col-md-12">
+    <%= link_to "全ての投稿を閲覧する", sakes_path, class: "btn btn-secondary" %>
   </div>
 </div>
