@@ -29,10 +29,12 @@
           <td class="bg-light">自己紹介</td>
           <td><%= @customer.introduction %></td>
         </tr>
-        <tr>
-          <td class="bg-light">メールアドレス</td>
-          <td><%= @customer.email %></td>
-        </tr>
+        <% unless @customer != current_customer %>
+          <tr>
+            <td class="bg-light">メールアドレス</td>
+            <td><%= @customer.email %></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
