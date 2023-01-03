@@ -82,7 +82,7 @@ class Public::SakesController < ApplicationController
   private
 
   def sake_params
-    params.require(:sake).permit(:genre_id,:name,:price,:introduction,:sake_image)
+    params.require(:sake).permit(:genre_id,:name,:price,:introduction,:sake_image,:rate)
   end
 
   def ensure_correct_customer

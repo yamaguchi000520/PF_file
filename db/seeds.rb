@@ -158,7 +158,7 @@ Sake.create!(
       price: 500,
       # tag_id: 1,
       introduction: "コクが深く少し高めの値段ですがとてもお勧めです。",
-      # evaluation: 0
+      rate: 4.5,
       sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/chimay.jpeg"), filename: 'default-image.jpeg')
     },
     {
@@ -168,7 +168,7 @@ Sake.create!(
       price: 2100,
       # tag_id: 1,
       introduction: "値段の割の味わいとしてはとてもお勧めです。",
-      # evaluation: 0
+      rate: 4.0,
       sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/blacklabel.jpeg"), filename: 'default-image.jpeg')
     },
     {
@@ -178,7 +178,7 @@ Sake.create!(
       price: 300,
       # tag_id: 1,
       introduction: "黒ビールとしては、値段もリーズナブルで重く美味しい味わいです。",
-      # evaluation: 0
+      rate: 4.0,
       sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/guinness.jpeg"), filename: 'default-image.jpeg')
     },
     {
@@ -188,7 +188,7 @@ Sake.create!(
       price: 1500,
       # tag_id: 1,
       introduction: "サントリーの古くからあるウイスキーです。個人的にはとても美味しく感じます。",
-      # evaluation: 0
+      rate: 3.5,
       sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/blacklabel.jpeg"), filename: 'default-image.jpeg')
     },
     {
@@ -198,7 +198,7 @@ Sake.create!(
       price: 4500,
       # tag_id: 1,
       introduction: "アブサンという薬草酒です。お水で加水すると甘さと香りが花開くかのごとく広がるのでおすすめです。",
-      # evaluation: 0
+      rate: 4.5,
       sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/pernod.jpeg"), filename: 'default-image.jpeg')
     },
     {
@@ -206,7 +206,7 @@ Sake.create!(
       genre_id: 6,
       name: "SED",
       price: 1600,
-      # tag_id: 1,
+      rate: 3.5,
       introduction: "白ワインで値段と味を比べるととても良い品です。少し辛口ですがあっさりしていて飲みやすいです。。",
       # evaluation: 0
       sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/sed.jpeg"), filename: 'default-image.jpeg')

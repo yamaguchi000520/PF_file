@@ -1,25 +1,41 @@
 <% if customer_signed_in? %>
   <%= render "public/sakes/new", sake: sake %>
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            ジャンル一覧
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <%= render 'public/sakes/genres_search', genres: genres %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% else %>
   <p>新規投稿するために会員登録をしてみよう<br>=>
   <%= link_to new_customer_registration_path, class: 'btn btn-outline-dark btn-info' do %>新規登録<% end %>
   </p>
-<% end %>
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            ジャンル一覧
+          </button>
+        </h5>
+      </div>
 
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          ジャンル一覧
-        </button>
-      </h5>
-    </div>
-
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-        <%= render 'public/sakes/genres_search', genres: genres %>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <%= render 'public/sakes/genres_search', genres: genres %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
