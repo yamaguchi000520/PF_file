@@ -60,6 +60,34 @@ Customer.create!(
         email: 'a@a',
         password: 'aaaaaa',
         profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/test.jpg"), filename: 'default-image.jpeg')
+    },
+    {
+        name: '華金が待ち遠しい',
+        introduction: 'いつもはビールを飲んでいます。最近のお気に入りとしては、ギネスです。',
+        email: 'b@b',
+        password: 'bbbbbb',
+        profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/bear.jpeg"), filename: 'default-image.jpeg')
+    },
+    {
+        name: 'まち男',
+        introduction: '常日頃から、美味しいものを探しております。情報共有ができれば幸いです',
+        email: 'c@c',
+        password: 'cccccc',
+        profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/test.jpg"), filename: 'default-image.jpeg')
+    },
+    {
+        name: 'グリ',
+        introduction: 'ワインが一番好きです。',
+        email: 'd@d',
+        password: 'dddddd',
+        profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/megane.jpeg"), filename: 'default-image.jpeg')
+    },
+    {
+        name: '寿司たろう',
+        introduction: 'アブサンや薬草系のお酒が好き。',
+        email: 'e@e',
+        password: 'eeeeee',
+        profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/sushi.jpeg"), filename: 'default-image.jpeg')
     }
   ]
 )
@@ -142,10 +170,49 @@ Sake.create!(
       introduction: "値段の割の味わいとしてはとてもお勧めです。",
       # evaluation: 0
       sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/blacklabel.jpeg"), filename: 'default-image.jpeg')
+    },
+    {
+      customer_id: 3,
+      genre_id: 1,
+      name: "GUINNESS",
+      price: 300,
+      # tag_id: 1,
+      introduction: "黒ビールとしては、値段もリーズナブルで重く美味しい味わいです。",
+      # evaluation: 0
+      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/guinness.jpeg"), filename: 'default-image.jpeg')
+    },
+    {
+      customer_id: 4,
+      genre_id: 2,
+      name: "daruma old",
+      price: 1500,
+      # tag_id: 1,
+      introduction: "サントリーの古くからあるウイスキーです。個人的にはとても美味しく感じます。",
+      # evaluation: 0
+      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/blacklabel.jpeg"), filename: 'default-image.jpeg')
+    },
+    {
+      customer_id: 5,
+      genre_id: 9,
+      name: "PERNOD",
+      price: 4500,
+      # tag_id: 1,
+      introduction: "アブサンという薬草酒です。お水で加水すると甘さと香りが花開くかのごとく広がるのでおすすめです。",
+      # evaluation: 0
+      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/pernod.jpeg"), filename: 'default-image.jpeg')
+    },
+    {
+      customer_id: 4,
+      genre_id: 6,
+      name: "SED",
+      price: 1600,
+      # tag_id: 1,
+      introduction: "白ワインで値段と味を比べるととても良い品です。少し辛口ですがあっさりしていて飲みやすいです。。",
+      # evaluation: 0
+      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/sed.jpeg"), filename: 'default-image.jpeg')
     }
   ]
 )
-# sake.image.attach(io: File.open(Rails.root.join("app/assets/images/no_image.jpg")), filename: "no_image.jpg")
 
 SakeComment.create!(
   [
@@ -158,6 +225,31 @@ SakeComment.create!(
       customer_id: 2,
       sake_id: 1,
       comment: "最高でした"
+    },
+    {
+      customer_id: 4,
+      sake_id: 1,
+      comment: "コスパ○"
+    },
+    {
+      customer_id: 3,
+      sake_id: 1,
+      comment: "次回買ってみようと思います"
+    },
+    {
+      customer_id: 1,
+      sake_id: 5,
+      comment: "コスパ○"
+    },
+    {
+      customer_id: 4,
+      sake_id: 3,
+      comment: "楽しみです"
+    },
+    {
+      customer_id: 3,
+      sake_id: 3,
+      comment: "コスパ○"
     },
     {
       customer_id: 1,
