@@ -1,17 +1,17 @@
-<div class="row">
-  <div class="col-md-4 offset-md-3">
-    <h4 class = 'mt-4 ml-2 offset-md-2'><strong>管理者ログイン</strong></h4>
+<div class="row px-sm-0 mx-auto justify-content-center">
+  <div class="m-5 col-md-8 text-cent">
+    <h4 class = 'mt-4'><strong>管理者ログイン</strong></h4>
   </div>
 </div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="row">
-    <div class="col-7 offset-md-2 text-danger">
+  <div class="row mx-5 mt-4 mx-auto justify-content-center">
+    <div class="col-7 text-danger">
       <%= render "admin/shared/error_messages", resource: resource %>
     </div>
   </div>
 
-  <div class="row mt-4">
-    <div class="col-2 offset-md-3">
+  <div class="row mx-5 mt-4 mx-auto justify-content-center">
+    <div class="col-2">
       <%= f.label :メールアドレス %><br/>
     </div>
     <div class="col-4">
@@ -19,8 +19,8 @@
     </div>
   </div>
 
-  <div class="row mt-4">
-    <div class="col-2 offset-md-3">
+  <div class="row mx-5 mt-4 mx-auto justify-content-center">
+    <div class="col-2">
       <%= f.label :パスワード %>
     </div>
     <div class="col-4">
@@ -28,8 +28,8 @@
     </div>
   </div>
 
-  <div class="row mt-4">
-    <div class="actions py-4 col-3 offset-md-3">
+  <div class="row mx-5 mt-4 mx-auto justify-content-center">
+    <div class="actions py-4 col-3">
       <%= f.submit "ログイン", class: "btn btn-success btn-block" %>
     </div>
   </div>
