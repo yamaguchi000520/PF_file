@@ -1,8 +1,8 @@
 <div class="m-5">
-  <h2 class = 'col-sm-5'>マイページ</h2>
+  <h2 class="col-sm-5">マイページ</h2>
 </div>
-<div class ="row">
-  <p class ="offset-1 col-sm-2"><strong>登録情報</strong></p>
+<div class="row">
+  <p class="offset-1 col-sm-2"><strong>登録情報</strong></p>
   <p class="col-sm-3">
     <% if @customer == current_customer %>
       <% unless current_customer.name == guest %>
@@ -41,7 +41,7 @@
   <p class="offset-md-1 col-sm-3 text-left"><strong>フォロー</stromg></p>
   <p><%= link_to "一覧を見る",customer_followings_path(@customer), class: 'btn btn-primary' %></p>
 </div>
-<div class=row>
+<div class="row">
   <p class="offset-md-1 col-sm-3 text-left"><strong>フォロワー</stromg></p>
   <p><%= link_to "一覧を見る", customer_followers_path(@customer), class: 'btn btn-primary' %></p>
 </div>
