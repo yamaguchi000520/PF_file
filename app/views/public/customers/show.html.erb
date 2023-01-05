@@ -7,6 +7,8 @@
     <% if @customer == current_customer %>
       <%# unless current_customer.name == guest %>
         <%= link_to "編集する", edit_customer_path, class: 'btn btn-success' %>
+      <%# else %>
+        <!--<p>guestのため変更できません</p>-->
       <%# end %>
     <% else %>
       <%= render "public/relationships/followbtn", customer: @customer %>
