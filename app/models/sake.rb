@@ -39,13 +39,13 @@ class Sake < ApplicationRecord
 
   def self.looks(search, word)
     if search == "perfect_match"
-      @sake = Sake.where("title LIKE?","#{word}")
+      @sake = Sake.where("name LIKE?","#{word}")
     elsif search == "forward_match"
-      @sake = Sake.where("title LIKE?","#{word}%")
+      @sake = Sake.where("name LIKE?","#{word}%")
     elsif search == "backward_match"
-      @sake = Sake.where("title LIKE?","%#{word}")
+      @sake = Sake.where("name LIKE?","%#{word}")
     elsif search == "partial_match"
-      @sake = Sake.where("title LIKE?","%#{word}%")
+      @sake = Sake.where("name LIKE?","%#{word}%")
     else
       @sake = Sake.all
     end
