@@ -4,6 +4,7 @@ class Sake < ApplicationRecord
   belongs_to :genre
   belongs_to :tag, optional: true
   has_many :favorites, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
   has_many :sake_comments, dependent: :destroy
 
   validates :name, presence:true
