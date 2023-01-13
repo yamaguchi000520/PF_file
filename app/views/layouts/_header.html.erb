@@ -10,6 +10,9 @@
       <%#= image_tag 'al_comi_logo.jpeg', size: "200x50" %>
     <%# end %>
       <%= link_to root_path, class:'btn btn-outline-light bg-dark text-white mr-3 logotitle font-16' do %>Al-comi<% end %>
+      <% if customer_signed_in? %>
+        <%= link_to '新規投稿', new_sake_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3 w-100px new-form' %>
+      <% end %>
       <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon bg-white"></span>
       </button>
@@ -26,7 +29,7 @@
         <ul class="navbar-nav ml-auto">
         <!--customerでログインしている時-->
         <% if customer_signed_in? %>
-          <li><%= link_to '新規投稿', new_sake_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3 w-100px' %></li>
+          <li><%= link_to '新規投稿', new_sake_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3 w-100px new-form-hang' %></li>
           <li><%= link_to 'マイページ', customer_path(current_customer), class:'btn btn-outline-light bg-dark text-white mr-3 my-3 w-100px' %></li>
           <li><%= link_to 'お酒一覧', sakes_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3' %></li>
           <li><%= link_to '会員一覧', customers_path, class:'btn btn-outline-light bg-dark text-white mr-3 my-3' %></li>

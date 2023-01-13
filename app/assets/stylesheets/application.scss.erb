@@ -6,6 +6,10 @@
   font-family: serif;
 }
 
+.new-form{
+  display: none;
+}
+
 .top-visual{
   width: 100%;
   height: 400px;
@@ -95,6 +99,16 @@
 
 @media (max-width: 1000px) {
   .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 766px) {
+  .new-form{
+    display: unset;
+    margin-left: auto;
+  }
+  .new-form-hang{
     display: none;
   }
 }
