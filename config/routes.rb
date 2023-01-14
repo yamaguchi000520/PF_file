@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     resources :sakes, only:[:index,:show,:destroy,:edit,:update,:create,:new] do
       resources :sake_comments, only:[:edit,:update,:destroy,:create]
       resource :favorites, only:[:create,:destroy]
+      resource :bookmarks, only:[:create,:destroy]
       get 'search' => "genres#search"
     end
     get '/customers/:id/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'

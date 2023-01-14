@@ -5,7 +5,8 @@
         <div class="row">
           <div class="col-5">
             <p>
-              <strong><%= link_to customer_path(sake.customer) do %><%= sake.customer.name %><% end %></strong>さん</p>
+              <strong><%= link_to customer_path(sake.customer) do %><%= sake.customer.name %><% end %></strong>さん
+            </p>
             <%= link_to sake_path(sake) do %>
               <%= image_tag sake.get_sake_image(190,150) %>
             <% end %>
@@ -21,6 +22,9 @@
             <p><%= render "public/sakes/static_rate", sake: sake %></p>
             <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>
             <%= render "public/favorites/favorite", sake: sake %>
+          </div>
+          <div class="col-2">
+            <%= render "public/bookmarks/bookmark_", sake: sake %>
           </div>
         </div>
       </div>

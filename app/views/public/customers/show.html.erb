@@ -55,3 +55,4 @@
       <p><%= link_to "チャットを始める", chat_path(@customer.id), class: 'btn btn-success' %></p>
   </div>
 <% end %>
+<% render "public/bookmarks/bookmark", sake: @sake, customer: @customer %>
