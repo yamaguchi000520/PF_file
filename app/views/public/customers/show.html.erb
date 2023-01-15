@@ -1,5 +1,11 @@
 <div class="m-5">
-  <h2 class="col-sm-5">マイページ</h2>
+  <h2 class="col-sm-5">
+    <% if @customer == current_customer %>
+      マイページ
+    <% else %>
+      会員詳細ページ
+    <% end %>
+  </h2>
 </div>
 <div class="row">
   <p class="offset-1 col-sm-2"><strong>登録情報</strong></p>
@@ -55,4 +61,8 @@
       <p><%= link_to "チャットを始める", chat_path(@customer.id), class: 'btn btn-success' %></p>
   </div>
 <% end %>
-<% render "public/bookmarks/bookmark", sake: @sake, customer: @customer %>
+<div class="row mb-5 mx-auto justify-content-center">
+  <div class="col-md-10">
+    <%= render "public/bookmarks/bookmark", sake: @sake, customer: @customer %>
+  </div>
+</div>

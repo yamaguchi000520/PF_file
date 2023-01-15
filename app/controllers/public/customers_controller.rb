@@ -5,7 +5,7 @@ class Public::CustomersController < ApplicationController
   def show
     @customer = Customer.find(params[:id])
     @sakes = @customer.sakes
-    @sake = Sake.new
+    @sake = Sake.find(params[:id])
   end
 
   def index

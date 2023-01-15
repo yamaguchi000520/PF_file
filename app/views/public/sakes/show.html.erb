@@ -1,5 +1,5 @@
 <div class="row m-5 mx-auto justify-content-center">
-  <div class="col-2">
+  <div class="col-2 offset-sm-1">
     <p>投稿者<br>
       <%= link_to customer_path(@sake.customer) do %>
         <%= @sake.customer.name %>
@@ -17,6 +17,9 @@
     <% if customer_signed_in? && @sake.customer.id == current_customer.id %>
       <%= link_to "編集する", edit_sake_path(@sake.id), class: "btn btn-success" %>
     <% end %>
+  </div>
+  <div class="col-1">
+    <%= render "public/bookmarks/bookmark_btn", sake: @sake %>
   </div>
 </div>
 
