@@ -17,7 +17,7 @@
               <td><%= image_tag sake.get_sake_image(50,50) %></td>
               <td><p><%= sake.name %><br><%= sake.genre.name %></p></td>
               <td><%= sake.introduction %></td>
-              <td><%= render "public/sakes/static_rate", sake: sake %></td>
+              <td><%= render "public/sakes/static_rate", sake: sake %><br><%= render "public/sakes/url", sake: sake %></td>
               <td>♥<%= sake.favorites.count %><br><i class="fas fa-light fa-comment"></i><%= sake.sake_comments.count %></td>
               <td>
                 <%= link_to "内容", admin_sake_path(sake.id), class: 'btn btn-sm btn-success' %>

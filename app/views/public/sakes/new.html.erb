@@ -78,6 +78,14 @@
     </div>
   <% end %>
 
+  <div class="row mx-5 mt-4 mx-auto justify-content-center">
+    <div class="col-3 text-center">
+      <%= f.label :"AmazonのURL" %>
+    </div>
+    <div class="col-4">
+      <p><%= f.text_field :url, placeholder: "http://xxx", class: 'sake_url' %></p>
+    </div>
+  </div>
 
   <div class="row mx-5 mt-4 mx-auto justify-content-center">
     <div class="actions py-4 col-5">
