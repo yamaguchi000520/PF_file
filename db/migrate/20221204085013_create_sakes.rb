@@ -9,6 +9,7 @@ class CreateSakes < ActiveRecord::Migration[6.1]
       t.string :introduction, null:false
       t.string :price, null:false
       t.float :rate
+      t.text :url
 
       t.timestamps
     end

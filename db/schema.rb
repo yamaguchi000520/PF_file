@@ -137,6 +137,7 @@ ActiveRecord::Schema.define(version: 2023_01_13_123254) do
     t.string "introduction", null: false
     t.string "price", null: false
     t.float "rate"
+    t.text "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

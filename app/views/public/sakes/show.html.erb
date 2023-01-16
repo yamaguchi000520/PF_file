@@ -3,7 +3,7 @@
     <p>投稿者<br>
       <%= link_to customer_path(@sake.customer) do %>
         <%= @sake.customer.name %>
-        <%= image_tag @sake.get_sake_image(100,100), class: "d-block mx-auto" %>
+        <%= image_tag @sake.get_sake_image(100, 100), class: "d-block mx-auto" %>
       <% end %>
     </p>
   </div>
@@ -11,7 +11,8 @@
     <p>お酒の名前：<%= @sake.name %><br></p>
     <p>ジャンル：<%= @genre.name %><br></p>
     <p>紹介文：<%= @sake.introduction %><br></p>
-    <p>評価<%= render "public/sakes/static_rate", sake: @sake %></p>
+    <p><%= render "public/sakes/url", sake: @sake %></p>
+    <p>評価<%= render "public/sakes/static_rate", sake: @sake %><br></p>
   </div>
   <div class="col-2 mt-5">
     <% if customer_signed_in? && @sake.customer.id == current_customer.id %>

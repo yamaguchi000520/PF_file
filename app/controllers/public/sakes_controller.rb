@@ -2,7 +2,7 @@ class Public::SakesController < ApplicationController
   before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
   def index
     @sake = Sake.new
-    @sakes = Sake.page(params[:page])
+    @sakes = Sake.page(params[:page]).per(5)
     @genres = Genre.all
   end
 
@@ -22,10 +22,10 @@ class Public::SakesController < ApplicationController
     else
       flash[:notice] = "未入力項目があります。"
       @genres = Genre.all
-      @sake = Sake.new(sake_params)
+      # @sake = Sake.new(sake_params)
       @sakes = Sake.all
       @customer = current_customer
-      render "index"
+      render "new"
     end
   end
 

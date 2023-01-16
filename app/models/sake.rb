@@ -1,7 +1,7 @@
 class Sake < ApplicationRecord
 
   belongs_to :customer
-  belongs_to :genre
+  belongs_to :genre, optional: true
   belongs_to :tag, optional: true
   has_many :favorites, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
@@ -10,7 +10,9 @@ class Sake < ApplicationRecord
   validates :name, presence:true
   validates :introduction, presence:true
   validates :genre_id, presence:true
-
+  # validates :url, inclusion: { in: ["amazon"] }, allow_blank: true
+  validates :url, format: { with: /https:\/\/www\.amazon\.co\.jp.*/ }, allow_blank: true
+  # validates :url, optional: true
 
   has_one_attached :sake_image
 
@@ -33,13 +35,12 @@ class Sake < ApplicationRecord
   #   image
   # end
 
-  def get_sake_image(width,height)
-    if sake_image.attached?
-      sake_image.variant(resize_to_limit: [width, height]).processed
-    else
+  def get_sake_image(width, height)
+    unless sake_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
       sake_image.attach(io: File.open(file_path), filename: 'default_image.jpg', content_type: 'image/jpeg')
     end
+    sake_image.variant(resize_to_limit: [width, height]).processed
   end
 
   def self.looks(search, word)

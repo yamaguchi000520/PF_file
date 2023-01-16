@@ -3,8 +3,8 @@
     <h4><strong>新規投稿画面</strong></h4>
   </div>
 </div>
+<%= render 'layouts/errors', obj: @sake %>
 <%= form_with model: @sake, url: sakes_path, method: :post, local: true do |f| %>
-  <%= render 'layouts/errors', obj: @sake %>
   <div class="row mx-5 mt-4 mx-auto justify-content-center">
     <div class="col-3 text-center">
        <%= f.label :お酒の画像 %>
