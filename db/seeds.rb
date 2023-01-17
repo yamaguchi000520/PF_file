@@ -11,7 +11,26 @@ Admin.create!(
     password: '123456',
 )
 
+# admins = [
+#   { email: 'test@test.com', password: '123456' }
+# ]
+
+# admins.each do |admin|
+#   Admin.find_or_create_by(email: admin[:email]) do |data|
+#     data.password = admin[:password]
+#   end
+# end
+
 # ジャンルseed
+# genres = %w[
+#   ビール ウイスキー ブランデー 焼酎 サワー
+#   ワイン 日本酒 リキュール その他
+# ]
+
+# genres.each do |genre|
+#   Genre.find_or_create_by(name: genre)
+# end
+
 Genre.create!(
   [
     {
@@ -45,6 +64,60 @@ Genre.create!(
 )
 
 #Customer
+# customers = [
+#   {
+#       name: 'ラーメン好き太郎',
+#       introduction: '初めまして、ラーメン好きの人です。',
+#       email: "i@i",
+#       password: 'iiiiii',
+#       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/test.jpg"), filename: 'default-image.jpeg')
+#   },
+#   {
+#       name: 'ウイスキー毎日飲酒',
+#       introduction: '常飲酒はホワイトホースくんです。',
+#       email: 'a@a',
+#       password: 'aaaaaa',
+#       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/test.jpg"), filename: 'default-image.jpeg')
+#   },
+#   {
+#       name: '華金が待ち遠しい',
+#       introduction: 'いつもはビールを飲んでいます。最近のお気に入りとしては、ギネスです。',
+#       email: 'b@b',
+#       password: 'bbbbbb',
+#       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/bear.jpeg"), filename: 'default-image.jpeg')
+#   },
+#   {
+#       name: 'まち男',
+#       introduction: '常日頃から、美味しいものを探しております。情報共有ができれば幸いです',
+#       email: 'c@c',
+#       password: 'cccccc',
+#       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/test.jpg"), filename: 'default-image.jpeg')
+#   },
+#   {
+#       name: 'グリ',
+#       introduction: 'ワインが一番好きです。',
+#       email: 'd@d',
+#       password: 'dddddd',
+#       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/megane.jpeg"), filename: 'default-image.jpeg')
+#   },
+#   {
+#       name: '寿司たろう',
+#       introduction: 'アブサンや薬草系のお酒が好き。',
+#       email: 'e@e',
+#       password: 'eeeeee',
+#       profile_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/sushi.jpeg"), filename: 'default-image.jpeg')
+#   }
+# ]
+
+# customers.each do |customer|
+#   Customer.find_or_create_by(email: customer[:email]) do |data|
+#     data.name = customer[:name]
+#     data.introduction = customer[:introduction]
+#     data.password = customer[:password]
+#     data.profile_image = customer[:profile_image]
+#   end
+# end
+
 Customer.create!(
   [
     {

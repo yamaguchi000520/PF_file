@@ -20,7 +20,7 @@
     <%= f.text_area :introduction, placeholder: "お酒の紹介文", class: 'form-control sake_introduction', rows: "5" %>
   </div>
   <div class="form-group">
-    <p>Amazon：<%= f.text_area :url, placeholder: "html://xxx", class: 'form-control sake_url' %></p>
+    <p>Amazon：<%= f.text_field :url, placeholder: "html://xxx", class: 'form-control sake_url' %></p>
   </div>
 
   <% if sake.id === nil %>

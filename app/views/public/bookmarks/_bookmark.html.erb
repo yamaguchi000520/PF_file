@@ -11,7 +11,7 @@
           <th width="20%"></th>
         </tr>
       </thead>
-      <% customer.bookmarks.first(3).each do |bookmark| %>
+      <% customer.bookmarks.order(created_at: :desc).first(3).each do |bookmark| %>
         <tr>
           <td>
             <%= link_to(bookmark.sake) do %>
@@ -20,14 +20,14 @@
             <% end %>
           </td>
           <td><%= bookmark.sake.introduction %></td>
-          <td><%= render "public/bookmarks/bookmark_btn", sake: sake %></td>
+          <td><%= render "public/bookmarks/bookmark_btn", sake: bookmark.sake %></td>
         </tr>
       <% end %>
     </table>
-    <% if customer.bookmarks.offset(3).any? %>
+    <% if customer.bookmarks.order(created_at: :desc).offset(3).any? %>
       <details>
         <summary>全てのコメントを表示</summary>
-        <% customer.bookmarks.offset(3).each do |bookmark| %>
+        <% customer.bookmarks.order(created_at: :desc).offset(3).each do |bookmark| %>
           <table class="table table-borderless">
             <thead>
               <tr>
@@ -44,7 +44,7 @@
                 <% end %>
               </td>
               <td><%= bookmark.sake.introduction %></td>
-              <td><%= render "public/bookmarks/bookmark_btn", sake: sake %></td>
+              <td><%= render "public/bookmarks/bookmark_btn", sake: bookmark.sake %></td>
             </tr>
           <% end %>
         </table>

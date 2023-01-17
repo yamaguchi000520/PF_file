@@ -1,7 +1,7 @@
-<% if sake.url == nil %>
+<% if sake.url.blank? %>
   <p class="amazon-del">Aamazon URL</p>
 <% else %>
-  <%= link_to sake.url do %>
-    <i class="fas fab fa-amazon"></i>
+  <%= link_to sake.url, target: :_blank, rel: "noopener noreferrer" do %>
+    <i class="fas fab fa-amazon fa-2x"></i>
   <% end %>
 <% end %>
