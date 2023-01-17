@@ -23,7 +23,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :genres, only:[:index,:create,:edit,:update,:destroy]
-    resources :sakes, only:[:show,:index,:destroy]
+    resources :sakes, only:[:show,:index,:destroy] do
+      resources :sake_comments, only:[:destroy]
+    end
     resources :customers, only:[:index,:show,:edit,:update]
     get "homes/about" => "homes#about"
     resources :homes, only:[:create,:edit,:update,:destroy]

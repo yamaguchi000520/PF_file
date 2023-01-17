@@ -210,9 +210,16 @@ Sake.create!(
       name: "SED",
       price: 1600,
       rate: 3.5,
-      introduction: "白ワインで値段と味を比べるととても良い品です。少し辛口ですがあっさりしていて飲みやすいです。。",
-      evaluation: 3,
+      introduction: "白ワインで値段と味を比べるととても良い品です。少し辛口ですがあっさりしていて飲みやすいです。",
       sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/sed.jpeg"), filename: 'default-image.jpeg')
+    },
+    {
+      customer_id: 2,
+      genre_id: 6,
+      name: "プティ・エニーラ",
+      price: 2000,
+      rate: 4,
+      introduction: "赤ワインとてもマイルドで美味し買ったです。"
     }
   ]
 )

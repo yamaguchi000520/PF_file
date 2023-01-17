@@ -1,7 +1,7 @@
 <div class="row m-5 mx-auto justify-content-center">
   <div class="col-2">
     <p>投稿者<br>
-      <%= link_to customer_path(@sake.customer) do %>
+      <%= link_to admin_customer_path(@sake.customer) do %>
         <%= @sake.customer.name %><br>
         <%= image_tag @sake.customer.get_profile_image(50, 50) %>
       <% end %>
@@ -14,9 +14,6 @@
     <p><%= render "public/sakes/url", sake: @sake %></p>
     <p>評価：<%= render "public/sakes/static_rate", sake: @sake %><br></p>
   </div>
-  <div class="col-2 mt-5">
-    <%= link_to "編集する", edit_sake_path(@sake.id), class: "btn btn-success" %>
-  </div>
 </div>
 
 <div class="row mx-sauto justify-content-center">
@@ -28,30 +25,6 @@
 <div class="row mb-5 mx-auto justify-content-center">
   <div class="offset-md-1 col-md-10">
     <p>コメント蘭</p>
-    <div id="sake_comments">
-      <table class="table table-borderless">
-        <thead>
-          <tr>
-            <th width="30%"></th>
-            <th width="40%"></th>
-            <th width="20%"></th>
-          </tr>
-        </thead>
-          <% @sake.sake_comments.each do |sake_comment| %>
-          <tr>
-            <td>
-            <%= link_to(sake_comment.customer) do %>
-              <%= image_tag sake_comment.customer.get_profile_image(50, 50) %><br>
-              <%= sake_comment.customer.name %>|<%= sake_comment.created_at.strftime('%Y/%m/%d') %>
-            <% end %>
-            </td>
-            <td><%= sake_comment.comment %></td>
-            <td>
-              <%= link_to "削除", sake_sake_comment_path(sake_comment.sake, sake_comment), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger", remote: true %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
-    </div>
+    <%= render "admin/sake_comments/comment", sake: @sake %>
   </div>
 </div>
