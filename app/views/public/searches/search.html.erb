@@ -12,7 +12,7 @@
     <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%#= image_tag customer.get_profile_image(50,50) %></td>
+        <td><%= image_tag customer.get_profile_image(50, 50) %></td>
         <td><%= link_to customer.name, customer_path(customer.id) %></td>
         <td><%= customer.introduction %></td>
       </tr>
@@ -32,7 +32,7 @@
     <tbody>
       <% @sakes.each do |sake| %>
         <tr>
-          <td><%= image_tag sake.get_sake_image(50,50) %></td>
+          <td><%= image_tag sake.get_sake_image(50, 50) %></td>
           <td><%= link_to sake.name, sake_path(sake.id) %></td>
           <td><%= sake.introduction %></td>
         </tr>

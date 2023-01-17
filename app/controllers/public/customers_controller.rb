@@ -1,5 +1,5 @@
 class Public::CustomersController < ApplicationController
-  before_action :ensure_correct_customer, only: [:edit, :update, :is_deleted]
+  before_action :ensure_correct_customer, only: [:edit, :update]
   before_action :ensure_guest_customer, only: [:edit]
 
   def show

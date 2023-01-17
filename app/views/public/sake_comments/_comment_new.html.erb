@@ -1,5 +1,5 @@
 <div class="form-group">
-<div id ="comments-error"></div>
+  <div id ="comments-error"></div>
   <%= form_with(model: [sake, sake_comment], local: false, remote: true) do |f| %>
     <%= f.text_area :comment, row: '5', placeholder: "コメント", class: 'form-control' %>
     <%= f.submit "送信する", class: 'btn btn-info mt-3' %>

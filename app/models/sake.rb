@@ -10,9 +10,8 @@ class Sake < ApplicationRecord
   validates :name, presence:true
   validates :introduction, presence:true
   validates :genre_id, presence:true
-  # validates :url, inclusion: { in: ["amazon"] }, allow_blank: true
+  # URLでAmazonがある時のみ許可
   validates :url, format: { with: /https:\/\/www\.amazon\.co\.jp.*/ }, allow_blank: true
-  # validates :url, optional: true
 
   has_one_attached :sake_image
 
@@ -24,17 +23,7 @@ class Sake < ApplicationRecord
     bookmarks.exists?(customer_id: customer.id)
   end
 
-  # def get_sake_image
-  #   (sake_image.attached?) ? sake_image : 'no_image.jpg'
-  # end
-  # def get_image
-  #   unless image.attached?
-  #     file_path = Rails.root.join('app/assets/images/no_image.jpg')
-  #     image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
-  #   end
-  #   image
-  # end
-
+  # 画像がない場合、no_image
   def get_sake_image(width, height)
     unless sake_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
@@ -43,6 +32,7 @@ class Sake < ApplicationRecord
     sake_image.variant(resize_to_limit: [width, height]).processed
   end
 
+  # 検索機能
   def self.looks(search, word)
     if search == "perfect_match"
       @sake = Sake.where("name LIKE?","#{word}")

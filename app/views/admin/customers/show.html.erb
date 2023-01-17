@@ -11,7 +11,7 @@
       <tbody>
         <tr>
           <td class="bg-light" width="30%">プロフィール画像</td>
-          <td width="70%"><%= image_tag @customer.get_profile_image(100,100) %></td>
+          <td width="70%"><%= image_tag @customer.get_profile_image(100, 100) %></td>
         </tr>
         <tr>
           <td class="bg-light">ニックネーム</td>
@@ -31,7 +31,7 @@
 </div>
 <div class="row">
   <p class="offset-md-1 col-sm-3 text-left"><strong>フォロー</stromg></p>
-  <p><%= link_to "一覧を見る",customer_followings_path(@customer), class: 'btn btn-primary' %></p>
+  <p><%= link_to "一覧を見る", customer_followings_path(@customer), class: 'btn btn-primary' %></p>
 </div>
 <div class="row">
   <p class="offset-md-1 col-sm-3 text-left"><strong>フォロワー</stromg></p>

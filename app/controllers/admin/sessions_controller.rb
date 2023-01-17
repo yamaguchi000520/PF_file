@@ -26,11 +26,12 @@ class Admin::SessionsController < Devise::SessionsController
   # end
 
   private
-
+  # 管理者のログイン後
   def after_sign_in_path_for(resource)
     admin_sakes_path
   end
 
+  # ログインしていない場合の表示画面
   def after_sign_out_path_for(resource)
     new_admin_session_path
   end

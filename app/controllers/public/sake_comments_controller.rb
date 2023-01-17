@@ -8,11 +8,6 @@ class Public::SakeCommentsController < ApplicationController
     unless @comment.save
       render 'errors'
     end
-
-    # @sake_comment = SakeComments.new(sake_comment_params)
-    # @sake_comment.sake_id = @sake.id
-    # @sake_comment.customer_id = current_customer.id
-    # @sake_comment.save
   end
 
   def edit
@@ -32,5 +27,4 @@ class Public::SakeCommentsController < ApplicationController
   def sake_comment_params
     params.require(:sake_comment).permit(:comment)
   end
-
 end

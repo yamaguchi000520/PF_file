@@ -2,53 +2,53 @@
 <% if customer.bookmarks == nil %>
   <p class="offset-1">お気に入りが登録されていません。</p>
 <% else %>
-<div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th style="width: 30%">お酒</th>
-        <th style="width: 40%">説明</th>
-        <th style="width: 20%"></th>
-      </tr>
-    </thead>
-    <% customer.bookmarks.first(3).each do |bookmark| %>
-    <tr>
-      <td>
-        <%= link_to(bookmark.sake) do %>
-          <%= image_tag bookmark.sake.get_sake_image(50,50) %><br>
-          <%= bookmark.sake.name %>
-        <% end %>
-      </td>
-      <td><%= bookmark.sake.introduction %></td>
-      <td><%= render "public/bookmarks/bookmark_btn", sake: sake %></td>
-    </tr>
-    <% end %>
-  </table>
-  <% if customer.bookmarks.offset(3).any? %>
-    <details>
-      <summary>全てのコメントを表示</summary>
-      <% customer.bookmarks.offset(3).each do |bookmark| %>
-        <table class="table table-borderless">
-          <thead>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th width="30%">お酒</th>
+          <th width="40%">説明</th>
+          <th width="20%"></th>
+        </tr>
+      </thead>
+      <% customer.bookmarks.first(3).each do |bookmark| %>
+        <tr>
+          <td>
+            <%= link_to(bookmark.sake) do %>
+              <%= image_tag bookmark.sake.get_sake_image(50, 50) %><br>
+              <%= bookmark.sake.name %>
+            <% end %>
+          </td>
+          <td><%= bookmark.sake.introduction %></td>
+          <td><%= render "public/bookmarks/bookmark_btn", sake: sake %></td>
+        </tr>
+      <% end %>
+    </table>
+    <% if customer.bookmarks.offset(3).any? %>
+      <details>
+        <summary>全てのコメントを表示</summary>
+        <% customer.bookmarks.offset(3).each do |bookmark| %>
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th width="30%">お酒</th>
+                <th width="40%">説明文</th>
+                <th width="20%"></th>
+              </tr>
+            </thead>
             <tr>
-              <th style="width: 30%">お酒</th>
-              <th style="width: 40%">説明文</th>
-              <th style="width: 20%"></th>
+              <td>
+                <%= link_to(bookmark.sake) do %>
+                  <%= image_tag bookmark.sake.get_sake_image(50, 50) %><br>
+                  <%= bookmark.sake.name %>
+                <% end %>
+              </td>
+              <td><%= bookmark.sake.introduction %></td>
+              <td><%= render "public/bookmarks/bookmark_btn", sake: sake %></td>
             </tr>
-          </thead>
-          <tr>
-            <td>
-              <%= link_to(bookmark.sake) do %>
-                <%= image_tag bookmark.sake.get_sake_image(50,50) %><br>
-                <%= bookmark.sake.name %>
-              <% end %>
-            </td>
-            <td><%= bookmark.sake.introduction %></td>
-            <td><%= render "public/bookmarks/bookmark_btn", sake: sake %></td>
-          </tr>
-        <% end %>
-      </table>
-    </delete>
-  <% end %>
-</div>
+          <% end %>
+        </table>
+      </delete>
+    <% end %>
+  </div>
 <% end %>

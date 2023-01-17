@@ -1,5 +1,6 @@
 class Public::ChatsController < ApplicationController
-  before_action :regect_non_related, only: [:show]
+  # 相互フォローしている場合にチャットを許可する時は下記のコメントアウトを解除
+  # before_action :regect_non_related, only: [:show]
 
   def show
     @customer = Customer.find(params[:id])
@@ -28,10 +29,11 @@ class Public::ChatsController < ApplicationController
     params.require(:chat).permit(:message, :room_id)
   end
 
-  def regect_non_related
-    customer = Customer.find(params[:id])
-    unless current_customer.following?(customer) && customer.following?(current_customer)
-      redirect_to sakes_path
-    end
-  end
+  # 相互フォローしている場合にチャットを許可する時は下記のコメントアウトを解除
+  # def regect_non_related
+  #   customer = Customer.find(params[:id])
+  #   unless current_customer.following?(customer) && customer.following?(current_customer)
+  #     redirect_to sakes_path
+  #   end
+  # end
 end

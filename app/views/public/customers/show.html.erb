@@ -27,7 +27,7 @@
       <tbody>
         <tr>
           <td class="bg-light" width="30%">プロフィール画像</td>
-          <td width="70%"><%= image_tag @customer.get_profile_image(100,100) %></td>
+          <td width="70%"><%= image_tag @customer.get_profile_image(100, 100) %></td>
         </tr>
         <tr>
           <td class="bg-light">ニックネーム</td>
@@ -55,12 +55,15 @@
   <p class="offset-md-1 col-sm-3 text-left"><strong>フォロワー</stromg></p>
   <p><%= link_to "一覧を見る", customer_followers_path(@customer), class: 'btn btn-primary' %></p>
 </div>
-<% if current_customer != @customer && current_customer.following?(@customer) && @customer.following?(current_customer) %>
+<!--相互フォローしている場合にチャットを許可する時は下記のコメントアウトを解除-->
+<%# if current_customer != @customer && current_customer.following?(@customer) && @customer.following?(current_customer) %>
+<% if @customer != current_customer %>
   <div class="row">
     <p class="offset-md-1 col-sm-3 text-left"><strong>チャット機能</stromg></p>
-      <p><%= link_to "チャットを始める", chat_path(@customer.id), class: 'btn btn-success' %></p>
+    <p><%= link_to "チャットを始める", chat_path(@customer.id), class: 'btn btn-success' %></p>
   </div>
 <% end %>
+<%# end %>
 <div class="row mb-5 mx-auto justify-content-center">
   <div class="col-md-10">
     <%= render "public/bookmarks/bookmark", sake: @sake, customer: @customer %>

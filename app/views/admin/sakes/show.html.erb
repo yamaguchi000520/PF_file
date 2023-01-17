@@ -3,7 +3,7 @@
     <p>投稿者<br>
       <%= link_to customer_path(@sake.customer) do %>
         <%= @sake.customer.name %><br>
-        <%= image_tag @sake.customer.get_profile_image(50,50) %>
+        <%= image_tag @sake.customer.get_profile_image(50, 50) %>
       <% end %>
     </p>
   </div>
@@ -11,14 +11,15 @@
     <p>お酒の名前：<%= @sake.name %><br></p>
     <p>ジャンル：<%= @genre.name %><br></p>
     <p>紹介文：<br><%= @sake.introduction %><br></p>
+    <p><%= render "public/sakes/url", sake: @sake %></p>
     <p>評価：<%= render "public/sakes/static_rate", sake: @sake %><br></p>
   </div>
   <div class="col-2 mt-5">
-      <%= link_to "編集する", edit_sake_path(@sake.id), class: "btn btn-success" %>
+    <%= link_to "編集する", edit_sake_path(@sake.id), class: "btn btn-success" %>
   </div>
 </div>
 
-<div class="row mx-auto justify-content-center">
+<div class="row mx-sauto justify-content-center">
   <div class="col-10">
     <p id="comments_count">コメント件数 : <%= @sake.sake_comments.count %></p>
   </div>
@@ -40,7 +41,7 @@
           <tr>
             <td>
             <%= link_to(sake_comment.customer) do %>
-              <%= image_tag sake_comment.customer.get_profile_image(50,50) %><br>
+              <%= image_tag sake_comment.customer.get_profile_image(50, 50) %><br>
               <%= sake_comment.customer.name %>|<%= sake_comment.created_at.strftime('%Y/%m/%d') %>
             <% end %>
             </td>

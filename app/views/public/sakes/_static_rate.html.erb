@@ -1,15 +1,15 @@
 <div id="rate_<%= sake.id %>"></div>
 <script>
 $(document).on('turbolinks:load', function() {
-    let raty_<%= sake.id %> = document.querySelector('#rate_<%= sake.id %>');
-    rate_<%= sake.id %>.innerHTML = ""
-    let option_<%= sake.id %> = {
-        starOn: "<%= asset_path('star-on.png') %>",
-        starOff: "<%= asset_path('star-off.png') %>",
-        starHalf: "<%= asset_path('star-half.png') %>",
-        score: "<%= sake.rate %>",
-        readOnly: true,
-      };
-    raty(raty_<%= sake.id %> ,option_<%= sake.id %>);
+  let raty_<%= sake.id %> = document.querySelector('#rate_<%= sake.id %>');
+  rate_<%= sake.id %>.innerHTML = ""
+  let option_<%= sake.id %> = {
+      starOn: "<%= asset_path('star-on.png') %>",
+      starOff: "<%= asset_path('star-off.png') %>",
+      starHalf: "<%= asset_path('star-half.png') %>",
+      score: "<%= sake.rate %>",
+      readOnly: true,
+    };
+  raty(raty_<%= sake.id %> ,option_<%= sake.id %>);
 });
 </script>

@@ -5,7 +5,6 @@
   <div class="col-lg-7 offset-md-1 py-3">
     <%= render 'public/searches/searchbox' %>
     <h3 class="m-4"><%= @search_genre %>一覧</h3>
-    <p>(全<%= @sakes_all.count %>件)</p>
     <div class="card-list-containar py-2">
       <% @sakes.each do |sake| %>
         <div class="card w-100 mx-aut mt-4 shadow-lg">
@@ -14,7 +13,7 @@
               <div class="col-5">
                 <p><strong><%= sake.customer.name %></strong>さん</p>
                 <%= link_to sake_path(sake) do %>
-                  <%= image_tag sake.get_sake_image(190,150) %>
+                  <%= image_tag sake.get_sake_image(190, 150) %>
                 <% end %>
               </div>
 
@@ -22,10 +21,7 @@
                 <p><%= sake.name %></p>
                 <p><%= sake.introduction %></p>
                 <p><%= sake.price %>円程度</p>
-                <!--<p>-->
-                <!--  <%#= sake.tag %>|-->
-                <!--  <%#= sake.evaluation %>-->
-                <!--</p>-->
+                <p><%= render "public/sakes/static_rate", sake: sake %></p>
                 <%= link_to "#{sake.sake_comments.count} コメント", sake_path(sake.id) %>
                 <%= render "public/favorites/favorite", sake: sake %>
               </div>

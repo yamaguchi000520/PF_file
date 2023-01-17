@@ -159,7 +159,8 @@ Sake.create!(
       # tag_id: 1,
       introduction: "コクが深く少し高めの値段ですがとてもお勧めです。",
       rate: 4.5,
-      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/chimay.jpeg"), filename: 'default-image.jpeg')
+      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/chimay.jpeg"), filename: 'default-image.jpeg'),
+      url: "https://www.amazon.co.jp/CHIMAY-%E3%82%B7%E3%83%A1%E3%82%A4-535542-%E3%83%96%E3%83%AB%E3%83%BC-750ml/dp/B0030B8K9E/ref=sr_1_5?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=3EEZSQ54SF12O&keywords=%E3%82%B7%E3%83%A1%E3%82%A4&qid=1673880197&sprefix=%E3%82%B7%E3%83%A1%E3%82%A4%2Caps%2C164&sr=8-5"
     },
     {
       customer_id: 1,
@@ -189,7 +190,8 @@ Sake.create!(
       # tag_id: 1,
       introduction: "サントリーの古くからあるウイスキーです。個人的にはとても美味しく感じます。",
       rate: 3.5,
-      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/blacklabel.jpeg"), filename: 'default-image.jpeg')
+      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/daruma.jpeg"), filename: 'default-image.jpeg'),
+      url: "https://www.amazon.co.jp/%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%89-%E3%82%B5%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC-%E3%82%A6%E3%82%A4%E3%82%B9%E3%82%AD%E3%83%BC-700ml/dp/B001TP8OPS/ref=sr_1_3?crid=3P1PABUHS085U&keywords=%E3%83%80%E3%83%AB%E3%83%9E+%E3%82%A6%E3%82%A4%E3%82%B9%E3%82%AD%E3%83%BC&qid=1673882989&sprefix=daruma+%E3%82%A6%E3%82%A4%E3%82%B9%E3%82%AD%2Caps%2C142&sr=8-3"
     },
     {
       customer_id: 5,
@@ -199,7 +201,8 @@ Sake.create!(
       # tag_id: 1,
       introduction: "アブサンという薬草酒です。お水で加水すると甘さと香りが花開くかのごとく広がるのでおすすめです。",
       rate: 4.5,
-      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/pernod.jpeg"), filename: 'default-image.jpeg')
+      sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/pernod.jpeg"), filename: 'default-image.jpeg'),
+      url: "https://www.amazon.co.jp/PERNOD-%E3%83%9A%E3%83%AB%E3%83%8E-101568658-%E3%82%A2%E3%83%8B%E3%82%B9%E3%83%AA%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%AB-700ml/dp/B004CFF2GG/ref=sr_1_1?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=3QHJ3IGFJ9NG&keywords=PERNOD&qid=1673882136&sprefix=pernod%2Caps%2C170&sr=8-1"
     },
     {
       customer_id: 4,
@@ -208,7 +211,7 @@ Sake.create!(
       price: 1600,
       rate: 3.5,
       introduction: "白ワインで値段と味を比べるととても良い品です。少し辛口ですがあっさりしていて飲みやすいです。。",
-      # evaluation: 0
+      evaluation: 3,
       sake_image: ActiveStorage::Blob.create_and_upload!(io: File.open("app/assets/images/sed.jpeg"), filename: 'default-image.jpeg')
     }
   ]

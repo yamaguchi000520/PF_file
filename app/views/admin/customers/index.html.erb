@@ -13,7 +13,7 @@
       <tbody>
         <% @customers.each do |customer| %>
           <tr>
-            <td><%= image_tag customer.get_profile_image(50,50) %></td>
+            <td><%= image_tag customer.get_profile_image(50, 50) %></td>
             <td><%= customer.name %></td>
             <td><%= link_to "show", admin_customer_path(customer), class: 'btn btn-success' %></td>
             <td>投稿件数：<%= customer.sakes.count %></td>
@@ -30,8 +30,8 @@
     </table>
   </div>
 </div>
-  <div class="row mx-auto justify-content-center">
-  <div class="col-11 offset-md-1 d-flex mx-auto">
+<div class="row mx-auto justify-content-center">
+  <div class="col-5 d-flex mx-auto">
     <%= paginate @customers, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>
