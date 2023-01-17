@@ -23,13 +23,13 @@
 一品目に対して、互いの感想を共有、または別の視点からの情報を発信する時
 
 ## 設計書
-####アプリケーション詳細設計書
+#### アプリケーション詳細設計書
 https://docs.google.com/spreadsheets/d/1Yhh0jnAdNha_yDaKK2uen019tXq2m7Ak/edit?usp=sharing&ouid=101427662993954078421&rtpof=true&sd=true
 
-####テーブル定義書
+#### テーブル定義書
 https://docs.google.com/spreadsheets/d/1_vX-FOrsuSwAkpAMyqU6wnOs1yEy7VVT/edit?usp=sharing&ouid=101427662993954078421&rtpof=true&sd=true
 
-####ER図
+#### ER図
 https://drive.google.com/file/d/1cbd8mrhzdKxzlHui7DU8XbWai4SqSWsz/view?usp=sharing
 
 ## 開発環境
