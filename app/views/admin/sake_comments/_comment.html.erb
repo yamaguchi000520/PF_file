@@ -10,7 +10,7 @@
       <% sake.sake_comments.each do |sake_comment| %>
       <tr>
         <td>
-        <%= link_to(sake_comment.customer) do %>
+        <%= link_to admin_customer_path(sake_comment.customer) do %>
           <%= image_tag sake_comment.customer.get_profile_image(50, 50) %><br>
           <%= sake_comment.customer.name %>|<%= sake_comment.created_at.strftime('%Y/%m/%d') %>
         <% end %>
