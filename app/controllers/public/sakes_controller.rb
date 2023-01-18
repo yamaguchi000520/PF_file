@@ -22,7 +22,6 @@ class Public::SakesController < ApplicationController
     else
       flash[:notice] = "未入力項目があります。"
       @genres = Genre.all
-      # @sake = Sake.new(sake_params)
       @sakes = Sake.all
       @customer = current_customer
       render "new"

@@ -1,7 +1,6 @@
 class Public::CustomersController < ApplicationController
   before_action :ensure_correct_customer, only: [:edit, :update]
   before_action :ensure_guest_customer, only: [:edit]
-
   def show
     @customer = Customer.find(params[:id])
     @sakes = @customer.sakes

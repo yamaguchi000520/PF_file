@@ -1,7 +1,6 @@
 class Public::ChatsController < ApplicationController
   # 相互フォローしている場合にチャットを許可する時は下記のコメントアウトを解除
   # before_action :regect_non_related, only: [:show]
-
   def show
     @customer = Customer.find(params[:id])
     rooms = current_customer.dm_rooms.pluck(:room_id)

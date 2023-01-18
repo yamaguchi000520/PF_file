@@ -16,7 +16,6 @@ class Customer < ApplicationRecord
   has_many :chats
   has_many :room, through: :dm_rooms
 
-
   validates :name, presence:true, length: { minimum: 1, maximum: 20 }
   validates :email, presence:true
 
