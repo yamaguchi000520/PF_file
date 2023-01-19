@@ -1,35 +1,33 @@
-<div class="m-4">
-  <div class="row mb-5 mx-auto justify-content-center">
-    <h2>ジャンル一覧・追加</h2>
-  </div>
+<div class="row mb-5 mx-auto justify-content-center mt-4">
+  <h2>ジャンル一覧・追加</h2>
+</div>
 
-  <div class="row mb-5 mx-auto justify-content-center">
-    <%= form_with model: [:admin, @genre], url:admin_genres_path, method: :post, local:true do |f| %>
-      <%= f.label :"ジャンル名：", class: 'col-md-4 text-center mt-3', style: 'font-size:20px' %>
-      <%= f.text_field :name, class: 'mt-3 genre_name col-md-4', size: 20 %>
-      <%= f.submit '新規登録', class: 'btn btn-success ml-2' %>
-    <% end %>
-  </div>
+<div class="row mb-5 mx-auto justify-content-center">
+  <%= form_with model: [:admin, @genre], url:admin_genres_path, method: :post, local:true do |f| %>
+    <%= f.label :"ジャンル名：", class: 'col-md-4 text-left mt-3 font_size_20' %>
+    <%= f.text_field :name, class: 'mt-3 genre_name col-md-4', size: 20 %>
+    <%= f.submit '新規登録', class: 'btn btn-success ml-2 mt-3' %>
+  <% end %>
+</div>
 
-  <div class="row mb-5 mx-auto justify-content-center">
-    <div class="col-md-10 mt-3">
-       <table class="table">
-        <thead>
-          <tr class="table-active">
-            <th>ジャンル</th>
-            <th colspan="2"></th>
+<div class="row mb-5 mx-auto justify-content-center">
+  <div class="col-md-10 mt-3">
+     <table class="table">
+      <thead>
+        <tr class="table-active">
+          <th>ジャンル</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @genres.each do |genre| %>
+          <tr>
+            <td class="font_size_20"><%= genre.name %></td>
+            <td><%= link_to "編集する", edit_admin_genre_path(genre.id), class: "btn btn-sm btn-success w-75" %></td>
+            <td><%= link_to "削除", admin_genre_path(genre.id), method: :delete, class: "btn btn-sm btn-danger w-100" %></td>
           </tr>
-        </thead>
-        <tbody>
-          <% @genres.each do |genre| %>
-            <tr>
-              <td style="font-size:20px"><%= genre.name %></td>
-              <td><%= link_to "編集する", edit_admin_genre_path(genre.id), class: "btn btn-sm btn-success w-75" %></td>
-              <td><%= link_to "削除", admin_genre_path(genre.id), method: :delete, class: "btn btn-sm btn-danger w-100" %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

@@ -7,7 +7,7 @@
 <%= form_with model: @customer, local: true do |f| %>
   <div class="row mt-4 mx-auto justify-content-center">
     <div class="col-3 text-center">
-        <%= f.label :プロフィール画像 %>
+      <%= f.label :プロフィール画像 %>
     </div>
     <div class="col-4">
       <%= f.file_field :profile_image, accept: "image/*", class: "form-control-file" %>
@@ -43,7 +43,7 @@
 
   <div class="row mx-5 mt-4 mx-auto justify-content-center">
     <div class="actions py-4 col-5">
-      <%= f.submit "編集内容を保存する",class: 'btn btn-secondary' %>
+      <%= f.submit "編集内容を保存する", class: 'btn btn-secondary' %>
     </div>
   </div>
 <% end %>

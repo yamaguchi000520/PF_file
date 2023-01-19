@@ -1,14 +1,13 @@
-
-  <table class="table table-hover table-inverse">
-    <thead>
-      <tr>
-      <th width="20%"></th>
-      <th width="30%"></th>
-      <th colspan="2"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% customers.each do |customer| %>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+    <th width="20%"></th>
+    <th width="30%"></th>
+    <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% customers.each do |customer| %>
       <tr>
         <td>
           <%= link_to customer_path(customer) do %>
@@ -40,6 +39,6 @@
         </td>
         <td>投稿件数：<%= customer.sakes.count %></td>
       </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <% end %>
+  </tbody>
+</table>

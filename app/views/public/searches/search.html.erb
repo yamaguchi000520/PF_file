@@ -10,13 +10,13 @@
       </tr>
     </thead>
     <tbody>
-    <% @customers.each do |customer| %>
-      <tr>
-        <td><%= image_tag customer.get_profile_image(50, 50) %></td>
-        <td><%= link_to customer.name, customer_path(customer.id) %></td>
-        <td><%= customer.introduction %></td>
-      </tr>
-    <% end %>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td><%= image_tag customer.get_profile_image(50, 50) %></td>
+          <td><%= link_to customer.name, customer_path(customer.id) %></td>
+          <td><%= customer.introduction %></td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 <% elsif @range == "Sake" %>
