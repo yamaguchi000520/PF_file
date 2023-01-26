@@ -1,13 +1,15 @@
 <div class="row m-5 mx-auto justify-content-center">
   <div class="col-2">
-    <p>投稿者<br>
+    <p>
+      投稿者:
       <%= link_to admin_customer_path(@sake.customer) do %>
         <%= @sake.customer.name %><br>
-        <%= image_tag @sake.customer.get_profile_image(50, 50) %>
+        <%= image_tag @sake.customer.get_profile_image(100, 100) %>
       <% end %>
     </p>
   </div>
   <div class="col-6">
+    <p>投稿日：<%= @sake.created_at.strftime('%Y/%m/%d') %></p>
     <p>お酒の名前：<%= @sake.name %><br></p>
     <p>ジャンル：<%= @genre.name %><br></p>
     <p>紹介文：<br><%= @sake.introduction %><br></p>

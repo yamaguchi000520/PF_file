@@ -11,6 +11,14 @@ ja:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%Y/%m/%d"
   activerecord:
+    attributes:
+      customer:
+        email: "メールアドレス"
+        name: "ニックネーム"
+        password: "パスワード"
+      password_confirmation: "確認用パスワード"
+    models:
+      customer: "会員"
     errors:
       models:
         customer:
