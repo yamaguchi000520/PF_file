@@ -34,7 +34,7 @@
               <td><%= home.introduction %></td>
               <td>
                 <%= link_to "編集する", edit_admin_home_path(home.id), class: "btn btn-sm btn-success w-100" %><br>
-                <%= link_to "削除", admin_home_path(home.id), method: :delete, class: "btn btn-sm btn-danger w-100 mt-3" %>
+                <%= link_to "削除", admin_home_path(home.id), method: :delete, data: {confirm: '本当に削除しますか？'}, class: "btn btn-sm btn-danger w-100 mt-3" %>
               </td>
             </tr>
           <% end %>
