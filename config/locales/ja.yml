@@ -13,12 +13,41 @@ ja:
   activerecord:
     attributes:
       customer:
-        email: "メールアドレス"
-        name: "ニックネーム"
-        password: "パスワード"
-      password_confirmation: "確認用パスワード"
+        email: メールアドレス
+        name: ニックネーム
+        password: パスワード
+      admin:
+        email: メールアドレス
+        name: 管理者名
+        password: パスワード
+      sake:
+        name: お酒の名前
+        introduction: 説明文
+        price: 金額
+        rate: 評価
+        url: URL
+      genre:
+        name: ジャンル名
+      tag:
+        name: タグ名
+      sake_comment:
+        comment: コメント
+      home:
+        name: アバウト名
+        introduction: 説明文
+      chat:
+        message: メッセージ
+      password_confirmation: 確認用パスワード
     models:
-      customer: "会員"
+      customer: 会員
+      admin: 管理者
+      bookmark: ブックマーク
+      chat: チャット
+      genre: ジャンル
+      home: アバウト
+      sake: お酒
+      sake_comment: コメント
+      tag: タグ
     errors:
       models:
         customer:
@@ -39,11 +68,31 @@ ja:
           password_confirmation:
             blank: 確認用パスワードが空です
             confirmation: 確認用パスワードが一致しません
+        admin:
+          email:
+            blank: メールアドレスが空です
+          password:
+            blank: パスワードが空です
+        sake:
+          name:
+            blank: お酒名が空です
+          introduction:
+            blank: 説明文が空です
+          genre_id:
+            blank: ジャンルが選択されていません。
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+        # not_saved:
+        #   one: エラーが発生したため %{resource} は保存されませんでした。
+        #   other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+  # errors:
+  #   messages:
+  #     not_saved:
+  #       one: エラーが発生したため %{resource} は保存されませんでした。
+  #       other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
   date:
     abbr_day_names:
     - 日
