@@ -11,9 +11,9 @@ class Admin::GenresController < ApplicationController
       flash[:notice] = "ジャンルの登録に成功しました。"
       redirect_to request.referer
     else
-      @genres = Genres.page(params[:page]).per(10)
+      @genres = Genre.page(params[:page]).per(10)
       flash[:notice] = "ジャンルの登録に失敗しました。"
-      render :index
+      redirect_to request.referer
     end
   end
 
