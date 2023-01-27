@@ -2,7 +2,11 @@
   <div class="row-md">
     <h2>アバウト 一覧・追加</h2>
   </div>
-
+  <div class="row mb-5 mx-auto justify-content-center">
+    <div class="col-md-10 mt-3" >
+      <%= render 'layouts/errors', obj: @home %>
+    </div>
+  </div>
   <div class="row-md mb-3">
     <%= form_with model: @home, url:admin_homes_path, method: :post, local:true do |f| %>
       <div class="form-group row">

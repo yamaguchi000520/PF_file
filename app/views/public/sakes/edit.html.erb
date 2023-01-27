@@ -3,6 +3,11 @@
     <h4><strong>投稿情報の変更</strong></h4>
   </div>
 </div>
+<div class="row mb-5 mx-auto justify-content-center">
+  <div class="col-md-10 mt-3" >
+    <%= render 'layouts/errors', obj: @sake %>
+  </div>
+</div>
 <%= form_with model: @sake, local: true do |f| %>
   <div class="row mt-4 mx-auto justify-content-center">
     <div class="col-3 text-center">

@@ -24,7 +24,6 @@ class Public::CustomersController < ApplicationController
       redirect_to customer_path
     else
       flash[:notice] = "登録情報の変更に失敗しました。"
-      render 'edit'
     end
   end
 
