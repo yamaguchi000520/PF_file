@@ -5,6 +5,12 @@
     </div>
   </div>
 
+  <div class="row mb-5 mx-auto justify-content-center">
+    <div class="col-md-10 mt-3" >
+      <%= render 'layouts/errors', obj: @home %>
+    </div>
+  </div>
+
   <div class="row-md mt-5">
     <%= form_with model: @home, url:admin_home_path(@home.id), method: :patch do |f| %>
       <div class="form-group row">
