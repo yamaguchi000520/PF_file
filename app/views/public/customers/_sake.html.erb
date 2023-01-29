@@ -1,0 +1,34 @@
+<details>
+  <summary class="text-danger">投稿一覧</summary>
+  <% if customer.sakes == nil %>
+    <p class="offset-1">投稿がありません。</p>
+  <% else %>
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th width="30%">お酒</th>
+            <th width="40%">説明</th>
+            <th width="20%"></th>
+          </tr>
+        </thead>
+        <% customer.sakes.order(created_at: :desc).each do |sake| %>
+          <tr>
+            <td>
+              <%= link_to(sake) do %>
+                <%= image_tag sake.get_sake_image(50, 50) %><br>
+                <%= sake.name %>
+              <% end %>
+            </td>
+            <td><%= sake.introduction %></td>
+            <td>
+              <% if customer != current_customer %>
+                <%= render "public/bookmarks/bookmark_btn", sake: sake %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  <% end %>
+</delete>

@@ -1,6 +1,7 @@
-<div id="rate_<%= sake.id %>"></div>
+<span id="rate_<%= sake.id %>"></span>
 <script>
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   let raty_<%= sake.id %> = document.querySelector('#rate_<%= sake.id %>');
   rate_<%= sake.id %>.innerHTML = ""
   let option_<%= sake.id %> = {

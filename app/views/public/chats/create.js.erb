@@ -1,2 +1,4 @@
-$('#message').append("<p class="message_my"><%= @chat.message %> ( <%= @chat.customer.name %> )<br><%= @chat.created_at.strftime('%m/%d %H:%M') %></p>");
+<!--$('.message').append("<p class="message_my"><%#= @chat.message %> ( <%#= @chat.customer.name %> )<br><%#= @chat.created_at.strftime('%m/%d %H:%M') %></p>");-->
+
+$('.message').append("<p><%= @chat.message %></p>");
 $('input[type=text]').val("")
