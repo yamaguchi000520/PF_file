@@ -16,7 +16,10 @@
     <%= render 'layouts/header' %>
     <div class="body">
       <div class="container-fluid">
-        <%= flash[:notice] %>
+        <div class="text-center">
+          <%= flash[:notice] %>
+          <%= alert %>
+        </div>
         <%= yield %>
       </div>
     </div>
