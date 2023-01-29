@@ -20,7 +20,6 @@ class Public::SakesController < ApplicationController
       flash[:notice] = "投稿が成功しました。"
       redirect_to sake_path(@sake.id)
     else
-      flash[:notice] = "未入力項目があります。"
       @genres = Genre.all
       @sakes = Sake.all
       @customer = current_customer
@@ -44,7 +43,6 @@ class Public::SakesController < ApplicationController
       flash[:notice] = "更新に成功しました。"
       redirect_to sakes_path
     else
-      flash[:notice] = "未入力欄があります。"
       @genres = Genre.all
       render :edit
     end

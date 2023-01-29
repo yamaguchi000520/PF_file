@@ -15,7 +15,6 @@ class Admin::HomesController < ApplicationController
       redirect_to request.referer
     else
       @homes = Home.all
-      flash[:notice] = "編集に失敗しました。"
       render :about
     end
   end

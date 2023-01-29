@@ -18,7 +18,6 @@ class Admin::CustomersController < ApplicationController
       flash[:notice] = "会員情報の更新に成功しました。"
       redirect_to admin_customers_path(@customer.id)
     else
-      flash[:notice] = "情報の更新に失敗しました。"
       render :edit
     end
   end
