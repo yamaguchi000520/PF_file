@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     end
     resources :customers, only:[:index,:show,:edit,:update]
     get "homes/about" => "homes#about"
+    post "homes/about" => "homes#create"
     resources :homes, only:[:create,:edit,:update,:destroy]
   end
 

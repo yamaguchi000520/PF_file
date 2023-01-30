@@ -15,7 +15,7 @@ class Admin::HomesController < ApplicationController
       redirect_to request.referer
     else
       @homes = Home.all
-      render :about
+      render  "about"
     end
   end
 

@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="row-md mb-3">
-    <%= form_with model: @home, url:admin_homes_path, method: :post, local:true do |f| %>
+    <%= form_with model: [:admin, @home], url: admin_homes_about_path, method: :post, local:true do |f| %>
       <div class="form-group row">
         <%= f.label :"お酒の種類：", class: 'col-md-2 text-center mt-3 offset-md-1' %>
         <%= f.text_field :name, class: 'form-control col-md-4 mt-3 home_name' %>
