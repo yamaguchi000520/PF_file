@@ -1,21 +1,23 @@
 <div id="bookmark_btn_<%= sake.id %>">
   <% if customer_signed_in? %>
-    <% if sake.bookmarked_by?(current_customer) %>
-      <p>
-        <%= link_to sake_bookmarks_path(sake), method: :delete, remote: true, class:"bookmark" do %>
-          ★
-        <% end %>
-      </p>
+    <% if sake.customer != current_customer %>
+      <% if sake.bookmarked_by?(current_customer) %>
+        <p>
+          <%= link_to sake_bookmarks_path(sake), method: :delete, remote: true, class:"bookmark" do %>
+            ★
+          <% end %>
+        </p>
+      <% else %>
+        <p>
+          <%= link_to sake_bookmarks_path(sake), method: :post, remote: true, class:"bookmark" do %>
+            ☆
+          <% end %>
+        </p>
+      <% end %>
     <% else %>
-      <p>
-        <%= link_to sake_bookmarks_path(sake), method: :post, remote: true, class:"bookmark" do %>
-          ☆
-        <% end %>
-      </p>
+      <i class="fas fa-user"></i>
     <% end %>
   <% else %>
-    <p>
-      ★
-    </p>
+    <p>★</p>
   <% end %>
 </div>
