@@ -32,6 +32,9 @@ https://docs.google.com/spreadsheets/d/1_vX-FOrsuSwAkpAMyqU6wnOs1yEy7VVT/edit?us
 #### ER図
 https://drive.google.com/file/d/1cbd8mrhzdKxzlHui7DU8XbWai4SqSWsz/view?usp=sharing
 
+#### AWS構成図
+https://drive.google.com/file/d/1OflBqAKKVc4_UKOiANThAwD7rpHGDkL9/view?usp=sharing
+
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
